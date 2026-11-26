@@ -1,0 +1,86 @@
+name: Open research adjudication
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      comment_id:
+        description: Original PR-author signed comment ID to process or resume
+        required: false
+        type: string
+  schedule:
+    - cron: '*/15 * * * *'
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+jobs:
+  process:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ||
+      (github.event.action == 'created' && github.event.issue.pull_request && startsWith(github.event.comment.body, 'Open-Mathematics-Claim: ')))
+    environment: protocol
+    concurrency:
+      group: research-executor
+      cancel-in-progress: false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    defaults:
+      run:
+        working-directory: protocol
+    env:
+      OPEN_MATH_PROBLEM_DIR: ${{ github.workspace }}/problem
+    steps:
+      - name: Read this exact reviewed problem configuration
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: problem
+          persist-credentials: false
+      - name: Read the pinned protocol implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: MuncleUscles/open-mathematics
+          ref: e72ff4a2b51e8cfa809865555116dfc3855e1e2e
+          path: protocol
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.22.0
+          cache: npm
+          cache-dependency-path: protocol/package-lock.json
+      - run: npm ci --ignore-scripts
+      - name: Verify protected signing roles and finalized problem configuration
+        if: github.event_name == 'workflow_dispatch' && inputs.comment_id == ''
+        env:
+          VERIFIER_SIGNING_KEY: ${{ secrets.VERIFIER_SIGNING_KEY }}
+          EXECUTOR_SIGNING_KEY: ${{ secrets.EXECUTOR_SIGNING_KEY }}
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import {privateKeyToAccount} from 'viem/accounts';
+          import {loadOpenProblem} from './src/open-research.mjs';
+          const {deployment} = loadOpenProblem(process.env.OPEN_MATH_PROBLEM_DIR);
+          for (const role of ['verifier', 'executor']) {
+            const key = process.env[role.toUpperCase() + '_SIGNING_KEY'];
+            assert.equal(privateKeyToAccount(key).address.toLowerCase(), deployment[role].toLowerCase());
+          }
+          JS
+          node scripts/open-agent.mjs inspect
+      - name: Select a valid signed claim
+        id: claim
+        run: node github/open-select.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Build pinned isolated Lean
+        if: steps.claim.outputs.comment_id != '' && steps.claim.outputs.needs_lean != 'false'
+        run: bash github/build-full-lean.sh
+      - name: Verify and implement GenLayer's final decision
+        if: steps.claim.outputs.comment_id != ''
+        run: node github/open-worker.mjs
+        env:
+          CLAIM_COMMENT_ID: ${{ steps.claim.outputs.comment_id }}
+          GITHUB_TOKEN: ${{ github.token }}
+          VERIFIER_SIGNING_KEY: ${{ secrets.VERIFIER_SIGNING_KEY }}
+          EXECUTOR_SIGNING_KEY: ${{ secrets.EXECUTOR_SIGNING_KEY }}

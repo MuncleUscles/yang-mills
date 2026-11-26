@@ -1,0 +1,21 @@
+{
+  "protocolVersion": 5,
+  "problem": "yang-mills",
+  "repository": "MuncleUscles/yang-mills",
+  "branch": "research",
+  "chainId": 61999,
+  "origin": "https://muncleuscles.github.io",
+  "verifier": "0xC66C590D36db46e9A012540d535b13dC457af248",
+  "executor": "0x9D31B54f4619f40AAE15849A0E6Ad6581bBf6715",
+  "windowSeconds": 300,
+  "minimumGitHubAccountAgeDays": 30,
+  "appId": 15368,
+  "verifierAppId": 15368,
+  "policyHash": "56e3d0e86958d1f5f36976c8eecf234a3f8117557e7c5d6f6f0395d59be6234d",
+  "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
+  "codeHash": "8b4143a0e66981c681894ad6c13883f4512d36165de66f18da27e762a3b4a9dd",
+  "protocolCommit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e",
+  "deploymentTx": "0xff01b07baee3b49ad598dc1f5f1709609017b70be0701455aa965b3652ea5115",
+  "deployedAt": "2026-11-26T08:07:39.328800+00:00",
+  "legacyLedgers": []
+}
