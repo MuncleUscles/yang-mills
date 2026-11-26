@@ -1,0 +1,20 @@
+{
+  "version": 6,
+  "problem": "yang-mills",
+  "repository": "MuncleUscles/yang-mills",
+  "branch": "research",
+  "objective": "For every compact simple gauge group, construct a nontrivial quantum Yang–Mills theory on four-dimensional Euclidean space and prove a strictly positive mass gap. Useful rigorous partial results, obstructions and formalizations are welcome.",
+  "toolchain": "lean4:4.36.0",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "admission": "open",
+  "notes": "The pinned Lean and Mathlib checker verifies the exact submitted statement. GenLayer judges relevance and research credit in light of the configured objective. Research notes receive independent nonformal review.",
+  "mathlib": {
+    "repository": "leanprover-community/mathlib4",
+    "commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842"
+  },
+  "checker": "serialized-kernels-v1"
+}
