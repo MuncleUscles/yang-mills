@@ -19,7 +19,7 @@ jobs:
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ||
-      (github.event.action == 'created' && github.event.issue.pull_request && startsWith(github.event.comment.body, 'Open-Mathematics-Claim: ')))
+      (github.event.action == 'created' && github.event.issue.pull_request && (startsWith(github.event.comment.body, 'Open-Mathematics-Claim: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Retry: '))))
     environment: protocol
     concurrency:
       group: research-executor
@@ -68,18 +68,31 @@ jobs:
           }
           JS
           node scripts/open-agent.mjs inspect
+      - name: Read the reviewed Studio appeal worker
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: MuncleUscles/open-mathematics
+          ref: ee572fb1cdbff6d6f43c19840eafc4b1c4253a08
+          path: review
+          persist-credentials: false
+      - name: Install the review worker’s pinned dependencies
+        run: npm ci --ignore-scripts
+        working-directory: review
       - name: Select a valid signed claim
         id: claim
-        run: node github/open-select.mjs
+        run: node ../review/github/open-select.mjs
         env:
+          OPEN_MATH_VERIFIER_DIR: ${{ github.workspace }}/protocol
           GITHUB_TOKEN: ${{ github.token }}
       - name: Build pinned isolated Lean
         if: steps.claim.outputs.comment_id != '' && steps.claim.outputs.needs_lean != 'false'
         run: bash github/build-full-lean.sh
       - name: Verify and implement GenLayer's final decision
         if: steps.claim.outputs.comment_id != ''
-        run: node github/open-worker.mjs
+        run: node ../review/github/open-worker.mjs
         env:
+          OPEN_MATH_VERIFIER_DIR: ${{ github.workspace }}/protocol
+          REVIEW_RETRY_HASH: ${{ steps.claim.outputs.retry_hash }}
           CLAIM_COMMENT_ID: ${{ steps.claim.outputs.comment_id }}
           GITHUB_TOKEN: ${{ github.token }}
           VERIFIER_SIGNING_KEY: ${{ secrets.VERIFIER_SIGNING_KEY }}
