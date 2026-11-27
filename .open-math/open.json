@@ -5,7 +5,7 @@
   "branch": "research",
   "configBranch": "main",
   "protocol": {
-    "repository": "MuncleUscles/open-mathematics",
+    "repository": "MuncleUscles/pnp.fun",
     "commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
   },
   "policy": {
