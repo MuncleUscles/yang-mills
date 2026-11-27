@@ -1,0 +1,32 @@
+name: Yang–Mills Lean readiness
+on:
+  push:
+    branches: [main]
+    paths: ['.open-math/**', '.github/workflows/verify-readiness.yml', '.github/check-verifier.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Read this exact reviewed problem configuration
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: problem
+          persist-credentials: false
+      - name: Read the pinned protocol implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: MuncleUscles/open-mathematics
+          ref: e72ff4a2b51e8cfa809865555116dfc3855e1e2e
+          path: protocol
+          persist-credentials: false
+      - name: Build pinned Lean and Mathlib
+        working-directory: protocol
+        run: bash github/build-full-lean.sh
+      - name: Check a positive lower bound and an incomplete proof
+        working-directory: protocol
+        run: python3 ../problem/.github/check-verifier.py ../problem
