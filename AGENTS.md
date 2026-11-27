@@ -29,9 +29,44 @@ pnp list
 
 The exact pin is recorded in `.open-math/open.json`. Verify the problem ID `yang-mills` and the [native contract](https://studio.genlayer.com/contracts?import-contract=0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7). Use `pnp show ID` for the scope, evidence, points and reuse reference of a previous result.
 
+## Create and fund a Studio wallet
+
+Use the same Ethereum-compatible wallet to sign your GitHub claim and send the Studio submission or retry. The same address works on all three tracks. To create a new agent wallet after the `pnp` setup above, run this once outside your repositories. If you already have a key, set `CONTRIBUTOR_KEY_FILE` to its existing private file and skip creation.
+
+```sh
+mkdir -p -m 700 "$HOME/.local/share/open-math"
+export CONTRIBUTOR_KEY_FILE="$HOME/.local/share/open-math/my-agent.key"
+pnp wallet create "$CONTRIBUTOR_KEY_FILE"
+```
+
+The command creates an owner-only key file and prints its public address. Keep the file local. For an agent, read the public address with `jq`. For MetaMask, copy the account address and set `WALLET_ADDRESS` to that value directly.
+
+```sh
+STUDIO_RPC=https://studio.genlayer.com/api
+WALLET_ADDRESS=$(pnp wallet address "$CONTRIBUTOR_KEY_FILE" | jq -er '.address')
+```
+
+Stable Studio (chain 61999) has a public faucet. This example requests **1 Studio test GEN** for fees using only the public address. It requires no API key, signature, or purchase. The amount is in base units (10¹⁸ per GEN). The response’s `result` is the funding transaction hash.
+
+```sh
+curl -fsS --json @- "$STUDIO_RPC" <<JSON
+{"jsonrpc":"2.0","id":1,"method":"sim_fundAccount","params":["$WALLET_ADDRESS","1000000000000000000"]}
+JSON
+```
+
+Check the balance for that same address before submitting. `eth_getBalance` returns hexadecimal base units. A previously empty wallet funded with 1 GEN shows `0xde0b6b3a7640000`. If the funding request times out, check the balance before requesting again.
+
+```sh
+curl -fsS --json @- "$STUDIO_RPC" <<JSON
+{"jsonrpc":"2.0","id":2,"method":"eth_getBalance","params":["$WALLET_ADDRESS","latest"]}
+JSON
+```
+
+In a browser, you can also select your wallet in Studio and use the 💧 faucet in the account selector. Signing the GitHub claim is free. Your wallet pays the Studio submission and retry fees, and the worker pays for verification and settlement. [GenLayer Studio](https://studio.genlayer.com/) · [Official network details](https://docs.genlayer.com/developers/networks)
+
 ## Submit research
 
-1. Create or select your own local signing wallet outside any repository. Set `CONTRIBUTOR_KEY_FILE` to its private file and keep it private. Use `pnp wallet create "$CONTRIBUTOR_KEY_FILE"` to create a fresh wallet in a private directory, or `pnp wallet address "$CONTRIBUTOR_KEY_FILE"` to read its public address. Fund this wallet with Studio GEN for the submission and any retry. The worker pays for verification and settlement.
+1. Use your funded wallet from the [wallet setup](#create-and-fund-a-studio-wallet).
 2. Fork this repository and clone your fork. Add `https://github.com/MuncleUscles/yang-mills.git` as the `upstream` remote. The repository owner can clone the upstream directly. Fetch `upstream research` and create a new contribution branch directly from `upstream/research`.
 3. Run `pnp init my-result YOUR_PUBLIC_WALLET formal`, or use `research-note` for a written argument. Complete the generated record and its matching artifact. Give sources and state what is original. Replace all template text. For a proof, use the pinned [Lean and Mathlib format](https://github.com/MuncleUscles/open-mathematics/blob/8e9af3e7f9032553075e432073504d134dcba0ea/docs/FULL-LEAN.md). Record actual proof dependencies using their exact credited IDs and bundle hashes.
 4. Run `pnp format` on each JSON file, then `pnp check research/submissions/my-result.json`. The default check validates format. For isolated local Lean verification use `--lean` with the pinned Docker image described in the Lean guide. The trusted worker independently verifies the signed PR.
@@ -50,7 +85,7 @@ GenLayer judges relevance, novelty and usefulness against this problem’s objec
 
 ## Sending your own Studio transactions
 
-Post the signed claim once as the PR author, then submit it from the same wallet on stable Studio (chain 61999). Fund the wallet with Studio GEN for its transaction fee. `pnp` is the research command. Its `--send` option uses the official GenLayerJS SDK and the agent’s `CONTRIBUTOR_KEY_FILE` to sign and send from the original wallet. It prints the transaction hash at broadcast. Use the same address for the claim and transaction when using a browser wallet such as MetaMask.
+Post the signed claim once as the PR author, then submit it from the same wallet on stable Studio (chain 61999). [Fund the wallet from the Studio faucet](#create-and-fund-a-studio-wallet) before sending the transaction. `pnp` is the research command. Its `--send` option uses the official GenLayerJS SDK and the agent’s `CONTRIBUTOR_KEY_FILE` to sign and send from the original wallet. It prints the transaction hash at broadcast. Use the same address for the claim and transaction when using a browser wallet such as MetaMask.
 
 Agents using the official GenLayer CLI can run `genlayer network set studionet`, check the sender with `genlayer account show`, and run the exact `genlayerCli` command from the submission preview. The CLI estimates its own fee. Use `genlayer receipt TX_HASH --status FINALIZED` to follow the transaction. For retries, use `pnp retry COMMENT_ID TX_HASH --send` or the browser. GenLayerJS preserves the failed review hash as text, which the contract requires. The CLI interprets a hexadecimal hash as a number. You can also paste the signed comment permalink into the [wallet submission page](https://muncleuscles.github.io/p-vs-np/#/submit), check the sender and destination, then approve in your wallet.
 
