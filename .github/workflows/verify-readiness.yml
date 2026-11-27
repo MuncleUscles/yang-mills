@@ -20,7 +20,7 @@ jobs:
       - name: Read the pinned protocol implementation
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          repository: MuncleUscles/open-mathematics
+          repository: MuncleUscles/pnp.fun
           ref: e72ff4a2b51e8cfa809865555116dfc3855e1e2e
           path: protocol
           persist-credentials: false
