@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: c721e09ed8fcb75f21df666ad2ece0d680a44621
+          ref: ee572fb1cdbff6d6f43c19840eafc4b1c4253a08
           path: review
           persist-credentials: false
       - name: Install the review worker’s pinned dependencies
