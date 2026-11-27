@@ -19,7 +19,7 @@ jobs:
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ||
-      (github.event.action == 'created' && github.event.issue.pull_request && (startsWith(github.event.comment.body, 'Open-Mathematics-Claim: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Retry: '))))
+      (github.event.action == 'created' && github.event.issue.pull_request && (startsWith(github.event.comment.body, 'Open-Mathematics-Claim: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Process: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Retry: '))))
     environment: protocol
     concurrency:
       group: research-executor
@@ -68,11 +68,11 @@ jobs:
           }
           JS
           node scripts/open-agent.mjs inspect
-      - name: Read the reviewed Studio appeal worker
+      - name: Read the reviewed Studio wallet and appeal worker
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: ee572fb1cdbff6d6f43c19840eafc4b1c4253a08
+          ref: 1199fba4f2e0c067c4cc27b10e201b3f7847393d
           path: review
           persist-credentials: false
       - name: Install the review worker’s pinned dependencies
