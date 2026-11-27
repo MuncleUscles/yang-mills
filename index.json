@@ -1,0 +1,37 @@
+{
+  "entries": [
+    {
+      "id": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+      "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
+      "chainId": 61999,
+      "repository": "MuncleUscles/yang-mills",
+      "pr": 10,
+      "head": "51d3068eb273317a9abd1a536f7d86cc78b5aa47",
+      "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+      "policy": "56e3d0e86958d1f5f36976c8eecf234a3f8117557e7c5d6f6f0395d59be6234d",
+      "protocolCommit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e",
+      "evidenceKind": "formal",
+      "verification": "verified",
+      "title": "Lattice Yang–Mills foundations: gauge invariance and classical vacua of the Wilson action for unitary representations",
+      "status": "verifying",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-10-51d3068eb273-4b9f0e7dcbd1.json",
+      "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46084299065",
+      "updatedAt": "2026-11-27T23:49:46.140Z",
+      "commentId": 7230378688,
+      "needsResume": true
+    }
+  ],
+  "mode": "live-github-studio",
+  "deployment": {
+    "protocolVersion": 5,
+    "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
+    "problem": "yang-mills",
+    "repository": "MuncleUscles/yang-mills",
+    "branch": "research",
+    "chainId": 61999,
+    "windowSeconds": 300
+  }
+}
