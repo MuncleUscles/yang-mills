@@ -69354,7 +69354,7 @@
     }
   },
   "startedAt": "2026-11-28T02:32:25.211Z",
-  "status": "approved",
+  "status": "credited",
   "walletIntake": {
     "contract": "0x86349d111DE1A8911B04a499f8512455601341bf",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -69554,14 +69554,15 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:45:47.126Z",
+  "updatedAt": "2026-11-28T02:45:52.972Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46098171894",
   "record": {
     "adjudication_finished_round": 0,
     "adjudication_started_round": 0,
+    "award_budget": "300",
     "challenge_reviews": [],
     "challenges": [],
-    "credited_points": "0",
+    "credited_points": "240",
     "deadline": 1795833792,
     "digest": "913c2e248d9308689db986e53dd1f06c378d7720e9beac2e8846a66f6fedf327",
     "evidence": {
@@ -69630,8 +69631,13 @@
       "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
       "worker_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
     },
+    "impact_reserve": "60",
+    "initial_paid": "240",
+    "merge_commit": "6703f590e0058b1a8120c4dd453b346130e11f9a",
+    "reserve_returned": "0",
+    "reserve_settled": false,
     "round": 0,
-    "status": "approved",
+    "status": "credited",
     "verdict": {
       "accept": true,
       "award": "300",
@@ -69652,5 +69658,9 @@
     "head": "dd110588616d1940c59cd75f85f4e4be58ff1455",
     "receiptHash": "0x674513f77e775e9f41e7263c538fc169861946fac173e3bf80b70e0350df6825"
   },
-  "mergeCommit": "6703f590e0058b1a8120c4dd453b346130e11f9a"
+  "mergeCommit": "6703f590e0058b1a8120c4dd453b346130e11f9a",
+  "outcome": {
+    "status": "credited",
+    "mergeCommit": "6703f590e0058b1a8120c4dd453b346130e11f9a"
+  }
 }
