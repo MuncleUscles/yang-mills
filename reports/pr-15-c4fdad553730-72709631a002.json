@@ -181200,7 +181200,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:29:28.328Z",
+  "updatedAt": "2026-11-28T02:29:33.854Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
   "record": {
     "adjudication_finished_round": 0,
@@ -181208,7 +181208,7 @@
     "award_budget": "600",
     "challenge_reviews": [],
     "challenges": [],
-    "credited_points": "480",
+    "credited_points": "560",
     "deadline": 1795832459,
     "digest": "758d117dcf01c766e7d9f3d6fe8e1477330f214265b0941c5b965f451dac4294",
     "evidence": {
@@ -181284,8 +181284,8 @@
     "impact_reserve": "120",
     "initial_paid": "480",
     "merge_commit": "53d50dc02687e3786b121217ad3b892d66fe27c4",
-    "reserve_returned": "0",
-    "reserve_settled": false,
+    "reserve_returned": "80",
+    "reserve_settled": true,
     "round": 0,
     "status": "credited",
     "verdict": {
@@ -181412,9 +181412,17 @@
       "pr-15-c4fdad553730-72709631a002",
       "pr-12-5e1db83b84ba-e1479e1a1833"
     ],
-    "paid_points": "0",
+    "paid_points": "40",
     "reason": "The evidence supports meaningful mathematical reuse rather than citation-only dependence. The earlier axial-gauge construction and the downstream center-symmetry arguments have distinct mathematical content; no artificial splitting, circular attribution or duplicate allocation is established. The demonstrated impact does not justify a higher band. Allocate 40 points from the existing 120-point reserve and return the remaining 80 to the downstream contributor. The 480-point upfront payout remains unchanged, the fixed 600-point total is preserved, and no recursive propagation occurs.",
-    "returned_points": "0",
+    "recipient_allocations": [
+      {
+        "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+        "points": "40",
+        "subject": "contributor",
+        "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F"
+      }
+    ],
+    "returned_points": "80",
     "round": 0,
     "route_commitments": [
       {
@@ -181432,6 +181440,6 @@
     "route_history": [],
     "routing_revision": 0,
     "source_digest": "758d117dcf01c766e7d9f3d6fe8e1477330f214265b0941c5b965f451dac4294",
-    "status": "provisional"
+    "status": "settled"
   }
 }
