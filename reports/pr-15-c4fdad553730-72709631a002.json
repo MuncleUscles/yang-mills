@@ -124536,7 +124536,7 @@
     }
   },
   "startedAt": "2026-11-28T02:10:11.859Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x86349d111DE1A8911B04a499f8512455601341bf",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -124761,15 +124761,15 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:16:59.437Z",
+  "updatedAt": "2026-11-28T02:17:04.383Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795832459,
     "digest": "758d117dcf01c766e7d9f3d6fe8e1477330f214265b0941c5b965f451dac4294",
     "evidence": {
       "artifact_hash": "1c75848f1d8dff640246620ce318c67a406ad795fb6bbed14ea3e4864f9773e3",
@@ -124842,8 +124842,20 @@
       "worker_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "600",
+      "evidence_refs": [
+        "pr-15-c4fdad553730-72709631a002",
+        "pr-10-51d3068eb273-4b9f0e7dcbd1",
+        "pr-12-5e1db83b84ba-e1479e1a1833"
+      ],
+      "novelty": 2,
+      "reason": "The contribution formalizes the lattice centre‑twist symmetry, proves invariance of all plaquette actions under the twist, establishes gauge‑covariance of Polyakov loops and derives the standard selection rule that a twist‑invariant linear expectation annihilates centre‑charged Polyakov observables. These results were not present in the existing track contributions (pr‑10 and pr‑12) and therefore constitute a genuine incremental addition to the repository, albeit a formalisation of known physics rather than a new discovery. The theorems are relevant to the overall Yang‑Mills objective as they provide rigorous lattice infrastructure for studying confinement and could be built upon to address the mass‑gap problem, but they do not themselves solve the full problem. The definitions and lemmas are expressed in Lean and can be readily reused in further lattice gauge‑theory developments, such as constructing invariant measures or analyzing phase transitions. Scores reflect moderate novelty (integration of known results), moderate significance (useful step toward confinement analysis), and moderate reusability (provides reusable formal components).",
+      "reusability": 2,
+      "significance": 2
+    }
   },
   "reviewLinkHash": "0xa38302c3b622ac092c8271f9cea5fb59273d3e76216f10dff533627bd224a39b"
 }
