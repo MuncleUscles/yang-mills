@@ -13,13 +13,13 @@
       "evidenceKind": "formal",
       "verification": "verified",
       "title": "Lattice Yang–Mills foundations: gauge invariance and classical vacua of the Wilson action for unitary representations",
-      "status": "verifying",
+      "status": "submitted",
       "points": "0",
       "impact": null,
       "dependencies": [],
       "report": "reports/pr-10-51d3068eb273-4b9f0e7dcbd1.json",
       "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46085783598",
-      "updatedAt": "2026-11-28T00:06:31.910Z",
+      "updatedAt": "2026-11-28T00:06:38.109Z",
       "commentId": 7230378688,
       "needsResume": true
     }
