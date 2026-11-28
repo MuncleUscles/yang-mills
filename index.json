@@ -20,13 +20,29 @@
       "impactReserve": "80",
       "reserveReturned": "0",
       "reserveSettled": false,
-      "impact": null,
+      "impact": {
+        "downstream": "pr-12-5e1db83b84ba-e1479e1a1833",
+        "status": "provisional",
+        "budget": 80,
+        "band_points": 26,
+        "paid_points": "0",
+        "returned_points": "0",
+        "allocations": [
+          {
+            "band": 1,
+            "id": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+            "points": "26",
+            "reason": "The downstream proof uses the earlier lattice and gauge-action definitions throughout its axial-gauge construction and explicitly applies the earlier result's class-function action-invariance component to the constructed gauge transformation. This is concrete, useful reuse, not merely an import or citation. However, the reused mathematics is standard, replaceable infrastructure; the earlier Frobenius identity and vacuum characterization do not contribute to this downstream proof. One modest infrastructure band is justified, without discovery credit."
+          }
+        ],
+        "reason": "The axial-gauge construction and final-slice Polyakov-product formula add distinct mathematical content beyond the earlier gauge-invariance result, so the evidence does not indicate artificial splitting or circular attribution. The inherited invariance clause is credited only as infrastructure reuse, not as a new discovery or a separate duplicated award. Allocate one band, paying 26 points from the existing 80-point reserve; return the remaining 54 points to the downstream contributor. The upfront payout remains unchanged, with no additional issuance or recursive propagation. The evidence does not justify spending further bands."
+      },
       "dependencies": [
         "pr-10-51d3068eb273-4b9f0e7dcbd1"
       ],
       "report": "reports/pr-12-5e1db83b84ba-e1479e1a1833.json",
       "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46090496568",
-      "updatedAt": "2026-11-28T01:08:50.841Z",
+      "updatedAt": "2026-11-28T01:08:57.320Z",
       "commentId": 7231074577,
       "needsResume": true
     },
