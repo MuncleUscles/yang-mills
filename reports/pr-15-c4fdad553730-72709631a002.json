@@ -125937,7 +125937,7 @@
     }
   },
   "startedAt": "2026-11-28T02:10:11.859Z",
-  "status": "provisional",
+  "status": "approved",
   "walletIntake": {
     "contract": "0x86349d111DE1A8911B04a499f8512455601341bf",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -126162,7 +126162,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:21:53.146Z",
+  "updatedAt": "2026-11-28T02:21:57.786Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
   "record": {
     "adjudication_finished_round": 0,
@@ -126243,7 +126243,7 @@
       "worker_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
     },
     "round": 0,
-    "status": "provisional",
+    "status": "approved",
     "verdict": {
       "accept": true,
       "award": "600",
