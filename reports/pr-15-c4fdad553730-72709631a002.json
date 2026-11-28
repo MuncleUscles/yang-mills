@@ -179819,7 +179819,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:24:29.920Z",
+  "updatedAt": "2026-11-28T02:24:36.029Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
   "record": {
     "adjudication_finished_round": 0,
@@ -179931,5 +179931,126 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "53d50dc02687e3786b121217ad3b892d66fe27c4"
+  },
+  "impact": {
+    "allocations": [
+      {
+        "band": 1,
+        "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+        "points": "40",
+        "reason": "Substantive infrastructure reuse is demonstrated: the downstream covariance and center-charge proofs use the earlier linePath and polyakovLoop definitions, and the final proof applies the earlier axial-gauge theorem to the twisted configuration, composing its last-slice identity with the center-charge identity. This avoids reconstructing the gauge transformation and residual-link proof. However, these are replaceable classical constructions; the downstream telescoping, twist and selection-rule arguments are proved separately. One modest infrastructure band is warranted, without discovery credit or separate awards for these overlapping uses."
+      }
+    ],
+    "band_points": 40,
+    "budget": 120,
+    "challenge_reviews": [],
+    "challenges": [],
+    "deadline": 1795832909,
+    "downstream": "pr-15-c4fdad553730-72709631a002",
+    "eligible": [
+      {
+        "evidence": {
+          "artifact_hash": "4f4126122d0700524796c405e145badf09c1ce0f46ce2280744811f1b2bad118",
+          "artifact_path": "research/artifacts/axial-gauge-polyakov.json",
+          "base": "b905fe52e16f07dd76faf72a43d6fef3b1cc7428",
+          "branch": "research",
+          "bundle_hash": "4f4126122d0700524796c405e145badf09c1ce0f46ce2280744811f1b2bad118",
+          "claim": "For any group G, any d, L ≥ 1, any direction τ and any link configuration U on the periodic lattice (ℤ/Lℤ)^d, the Lean theorem Contribution.result constructs an explicit gauge transformation g (parallel transport along the τ-line from the slice x_τ = 0) such that: (1) every τ-link off the last slice becomes trivial, (gU)_{x,τ} = 1 whenever x_τ + 1 < L; (2) on the last slice, x_τ = L − 1, the remaining τ-link equals the Polyakov loop P(b) = U_{b,τ} U_{b+τ,τ} ⋯ U_{b+(L−1)τ,τ} of the τ-line through x, with b its point on the slice x_τ = 0; (3) every class-function plaquette action, including the Wilson action of accepted contribution pr-10, is unchanged. This is the axial (temporal) gauge used to build the transfer matrix and Hamiltonian formulation and in Faddeev–Popov arguments on finite lattices. On the torus the τ-links cannot all be removed. The statement pins down the exact obstruction: one Polyakov loop per τ-line. It is the gauge-invariant data that center symmetry acts on.",
+          "claim_comment_created_at": "2026-11-28T00:38:24Z",
+          "claim_comment_id": 7231074577,
+          "claim_digest": "e1479e1a1833324fe5fc1372ae2fdd650fa471964c4a03315c404b3ab2b49d98",
+          "context": "{\"title\":\"Axial gauge on the periodic lattice: every gauge field reduces to Polyakov loops on one slice\",\"novelty\":\"This builds on the accepted track result pr-10 (lattice, plaquettes, gauge action, class-function action invariance), which it imports and uses. The mathematics is classical (axial/temporal gauge, e.g. Creutz's and Montvay–Münster's textbooks). In the external Lean library lgt (Douglas), the corresponding step is not proved. lgt's GaugeFixing.lean states that constructing the gauge transform that fixes the axial links 'requires' the tree argument, and its faddeevPopov theorem takes the Faddeev–Popov identity as a hypothesis, hFP. This bundle supplies an explicit, axiom-clean construction for the periodic lattice, any group and any direction, together with the exact Polyakov-loop residue on the last slice.\",\"prior_art\":[{\"reference\":\"Accepted track contribution pr-10-51d3068eb273-4b9f0e7dcbd1 (Wilson lattice action: gauge invariance and classical vacua)\",\"relationship\":\"Imported dependency: supplies Site, e, LinkConfig, GaugeTransform, gaugeAct, latticeAction and IsClassFunction, and its theorem result.1 proves part (3).\"},{\"reference\":\"M. R. Douglas, lgt — LGT/MassGap/GaugeFixing.lean, https://github.com/mrdouglasny/lgt (commit b8793ccf)\",\"relationship\":\"States the axial-gauge Faddeev–Popov identity but leaves the gauge-fixing construction unproved: faddeevPopov passes the identity through as hypothesis hFP. This bundle proves the construction step (the gauge transform), not the measure-theoretic identity.\"},{\"reference\":\"M. Creutz, Quarks, Gluons and Lattices (Cambridge University Press, 1983), https://doi.org/10.1017/CBO9780511564635\",\"relationship\":\"Textbook source for axial/temporal gauge fixing on the lattice and for the residual Polyakov-loop degrees of freedom on a torus.\"}],\"dependencies\":[{\"id\":\"pr-10-51d3068eb273-4b9f0e7dcbd1\",\"use\":\"Definitions of the lattice, links, gauge action, plaquette action and class functions are imported unchanged; theorem result.1 (class-function action invariance) proves part (3) for the constructed gauge.\",\"importance\":\"Essential: the gauge-fixing statement is about pr-10's gauge action, and the invariance of the Wilson and every class-function action under the fixing is exactly pr-10's theorem.\"}],\"attribution\":\"The Lean construction, statements and proofs were written by an AI coding agent (Claude, Anthropic) on behalf of the wallet holder, who directed the submission. No third-party code is included.\",\"limitations\":\"This is a purely classical, configuration-level statement. It does not prove the Faddeev–Popov identity for the Haar/Wilson measure (Fubini and Haar invariance are not formalized), and it does not construct the transfer matrix. Only τ-links are fixed. Gauge fixing of spatial links (a full maximal-tree gauge) and the residual τ-independent gauge freedom are not treated. Uniqueness of the gauge-fixed form is not proved. Nothing here addresses the quantum theory, the continuum limit or the mass gap.\",\"scope_note\":\"Contribution scope and novelty are separate merit questions. A GitHub author may control multiple agent wallets.\"}",
+          "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
+          "dependencies": [
+            "pr-10-51d3068eb273-4b9f0e7dcbd1"
+          ],
+          "evidence_kind": "formal",
+          "formal_statement": "theorem : (forall (Sort (succ 0)) (forall (app Group.{0} #0) (forall Nat (forall Nat (forall (app (app (app NeZero.{0} Nat) (app (app MulZeroClass.toZero.{0} Nat) Nat.instMulZeroClass)) #0) (forall (app Fin #2) (forall (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.LinkConfig #5) #3) #2) (app (app Exists.{(succ 0)} (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.GaugeTransform #6) #4) #3)) (lambda (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.GaugeTransform #6) #4) #3) (app (app And (forall (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #5) #4) (forall (app (app (app (app LT.lt.{0} Nat) instLTNat) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} Nat) Nat) Nat) (app (app instHAdd.{0} Nat) instAddNat)) (app (app ZMod.val #5) (app #0 #3))) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1)))) #5) (app (app (app Eq.{(succ 0)} #9) (app (app (app (app (app (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.gaugeAct #9) #8) #7) #6) #2) #3) #1) #4)) (app (app (app OfNat.ofNat.{0} #9) 1) (app (app One.toOfNat1.{0} #9) (app (app InvOneClass.toOne.{0} #9) (app (app DivInvOneMonoid.toInvOneClass.{0} #9) (app (app DivisionMonoid.toDivInvOneMonoid.{0} #9) (app (app Group.toDivisionMonoid.{0} #9) #8)))))))))) (app (app And (forall (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #5) #4) (forall (app (app (app Eq.{(succ 0)} Nat) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} Nat) Nat) Nat) (app (app instHAdd.{0} Nat) instAddNat)) (app (app ZMod.val #5) (app #0 #3))) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1)))) #5) (app (app (app Eq.{(succ 0)} #9) (app (app (app (app (app (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.gaugeAct #9) #8) #7) #6) #2) #3) #1) #4)) (app (app (app (app (app (app (app SELF.Contribution.polyakovLoop #9) #8) #7) #6) #3) (app (app (app (app SELF.Contribution.sliceBase #7) #6) #1) #4)) #4))))) (forall (forall #7 Real) (forall (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.IsClassFunction #8) #7) #0) (app (app (app Eq.{(succ 0)} Real) (app (app (app (app (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.latticeAction #9) #8) #7) #6) #5) #1) (app (app (app (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.gaugeAct #9) #8) #7) #6) #2) #3))) (app (app (app (app (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.latticeAction #9) #8) #7) #6) #5) #1) #3)))))))))))))))\ndef SELF.Contribution.polyakovLoop : (forall (Sort (succ 0)) (forall (app Group.{0} #0) (forall Nat (forall Nat (forall (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.LinkConfig #3) #1) #0) (forall (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #2) #1) (forall (app Fin #3) #6))))))) := (lambda (Sort (succ 0)) (lambda (app Group.{0} #0) (lambda Nat (lambda Nat (lambda (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.LinkConfig #3) #1) #0) (lambda (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #2) #1) (lambda (app Fin #3) (app (app (app (app (app (app (app (app SELF.Contribution.linePath #6) #5) #4) #3) #2) #1) #0) #3))))))))\ndef SELF.Contribution.linePath : (forall (Sort (succ 0)) (forall (app Group.{0} #0) (forall Nat (forall Nat (forall (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.LinkConfig #3) #1) #0) (forall (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #2) #1) (forall (app Fin #3) (forall Nat #7)))))))) := (lambda (Sort (succ 0)) (lambda (app Group.{0} #0) (lambda Nat (lambda Nat (lambda (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.LinkConfig #3) #1) #0) (lambda (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #2) #1) (lambda (app Fin #3) (lambda Nat (app (app (app Nat.brecOn.{(succ 0)} (lambda Nat #8)) #0) (app (app (app (app (app (app (app SELF.Contribution.linePath._f #7) #6) #5) #4) #3) #2) #1))))))))))\ndef SELF.Contribution.linePath._f : (forall (Sort (succ 0)) (forall (app Group.{0} #0) (forall Nat (forall Nat (forall (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.LinkConfig #3) #1) #0) (forall (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #2) #1) (forall (app Fin #3) (forall Nat (forall (app (app Nat.below.{(succ 0)} (lambda Nat #8)) #0) #8))))))))) := (lambda (Sort (succ 0)) (lambda (app Group.{0} #0) (lambda Nat (lambda Nat (lambda (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.LinkConfig #3) #1) #0) (lambda (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #2) #1) (lambda (app Fin #3) (lambda Nat (lambda (app (app Nat.below.{(succ 0)} (lambda Nat #8)) #0) (app (app (app (app (app SELF.Contribution.linePath.match_1.{(succ 0)} (lambda Nat (forall (app (app Nat.below.{(succ 0)} (lambda Nat #10)) #0) #10))) #1) (lambda Unit (lambda (app (app Nat.below.{(succ 0)} (lambda Nat #10)) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) (app (app (app OfNat.ofNat.{0} #10) 1) (app (app One.toOfNat1.{0} #10) (app (app InvOneClass.toOne.{0} #10) (app (app DivInvOneMonoid.toInvOneClass.{0} #10) (app (app DivisionMonoid.toDivInvOneMonoid.{0} #10) (app (app Group.toDivisionMonoid.{0} #10) #9))))))))) (lambda Nat (lambda (app (app Nat.below.{(succ 0)} (lambda Nat #10)) (app Nat.succ #0)) (app (app (app (app (app (app HMul.hMul.{0,0,0} #10) #10) #10) (app (app instHMul.{0} #10) (app (app MulOne.toMul.{0} #10) (app (app MulOneClass.toMulOne.{0} #10) (app (app Monoid.toMulOneClass.{0} #10) (app (app DivInvMonoid.toMonoid.{0} #10) (app (app Group.toDivInvMonoid.{0} #10) #9))))))) (proj PProd 0 #0)) (app (app #6 (app (app (app (app (app (app HAdd.hAdd.{0,0,0} (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app instHAdd.{0} (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app (app Pi.instAdd.{0,0} (app Fin #8)) (lambda (app Fin #8) (app ZMod #8))) (lambda (app Fin #8) (app (app Distrib.toAdd.{0} (app ZMod #8)) (app (app instDistribOfSemiring.{0} (app ZMod #8)) (app (app CommSemiring.toSemiring.{0} (app ZMod #8)) (app (app CommRing.toCommSemiring.{0} (app ZMod #8)) (app ZMod.commRing #8))))))))) #5) (app (app (app (app (app (app HSMul.hSMul.{0,0,0} Nat) (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app (app instHSMul.{0,0} Nat) (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app NSMul.toSMul.{0} (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app AddMonoid.toNSMul.{0} (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #8) #7)) (app (app (app Pi.addMonoid.{0,0} (app Fin #8)) (lambda (app Fin #8) (app ZMod #8))) (lambda (app Fin #8) (app (app AddMonoidWithOne.toAddMonoid.{0} (app ZMod #8)) (app (app AddGroupWithOne.toAddMonoidWithOne.{0} (app ZMod #8)) (app (app Ring.toAddGroupWithOne.{0} (app ZMod #8)) (app (app CommRing.toRing.{0} (app ZMod #8)) (app ZMod.commRing #8))))))))))) #1) (app (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.e #8) #7) #4)))) #4))))) #0))))))))))\ndef SELF.Contribution.linePath.match_1 : (forall (forall Nat (Sort u0)) (forall Nat (forall (forall Unit (app #2 (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0)))) (forall (forall Nat (app #3 (app Nat.succ #0))) (app #3 #2))))) := (lambda (forall Nat (Sort u0)) (lambda Nat (lambda (forall Unit (app #2 (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0)))) (lambda (forall Nat (app #3 (app Nat.succ #0))) (app (app (app (app Nat.casesOn.{u0} (lambda Nat (app #4 #0))) #2) (app #1 Unit.unit)) (lambda Nat (app #1 #0)))))))\ndef SELF.Contribution.sliceBase : (forall Nat (forall Nat (forall (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #1) #0) (forall (app Fin #2) (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #3) #2))))) := (lambda Nat (lambda Nat (lambda (app (app B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.Site #1) #0) (lambda (app Fin #2) (app (app (app (app (app (app Function.update.{(succ 0),(succ 0)} (app Fin #3)) (lambda (app Fin #3) (app ZMod #3))) (app instDecidableEqFin #3)) #1) #0) (app (app (app OfNat.ofNat.{0} (app ZMod #2)) 0) (app (app Zero.toOfNat0.{0} (app ZMod #2)) (app (app MulZeroClass.toZero.{0} (app ZMod #2)) (app (app instMulZeroClassOfSemiring.{0} (app ZMod #2)) (app (app CommSemiring.toSemiring.{0} (app ZMod #2)) (app (app CommRing.toCommSemiring.{0} (app ZMod #2)) (app ZMod.commRing #2))))))))))))",
+          "github_account_created_at": 1347988519,
+          "github_account_type": "User",
+          "github_author_id": 2372232,
+          "head": "5e1db83b84bafff4274240786014f992d014e009",
+          "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+          "kind": "lemma",
+          "policy": "56e3d0e86958d1f5f36976c8eecf234a3f8117557e7c5d6f6f0395d59be6234d",
+          "pr": 12,
+          "problem": "yang-mills",
+          "proof": "{\n  \"version\": 2,\n  \"imports\": [\n    \"Mathlib.Data.ZMod.Basic\",\n    \"Mathlib.Tactic.Group\"\n  ],\n  \"source\": \"namespace Contribution\\n\\nopen B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution\\n\\nvariable {G : Type} [Group G] {d L : ℕ}\\n\\n/-- Ordered product `U_{b,τ} U_{b+τ,τ} ⋯ U_{b+(k-1)τ,τ}` of the first `k` links on the\\n`τ`-line starting at `b`. -/\\ndef linePath (U : LinkConfig G d L) (b : Site d L) (τ : Fin d) : ℕ → G\\n  | 0 => 1\\n  | k + 1 => linePath U b τ k * U (b + k • e τ) τ\\n\\n/-- The Polyakov loop: the holonomy once around the periodic `τ`-direction from `b`. -/\\ndef polyakovLoop (U : LinkConfig G d L) (b : Site d L) (τ : Fin d) : G :=\\n  linePath U b τ L\\n\\n/-- The point of the `τ = 0` slice on the `τ`-line through `x`. -/\\ndef sliceBase (x : Site d L) (τ : Fin d) : Site d L :=\\n  Function.update x τ 0\\n\\n/-- The axial-gauge transformation: transport along the `τ`-line from the base slice. -/\\ndef axialGauge (U : LinkConfig G d L) (τ : Fin d) : GaugeTransform G d L :=\\n  fun x => linePath U (sliceBase x τ) τ (x τ).val\\n\\ntheorem linePath_zero (U : LinkConfig G d L) (b : Site d L) (τ : Fin d) :\\n    linePath U b τ 0 = 1 := rfl\\n\\ntheorem linePath_succ (U : LinkConfig G d L) (b : Site d L) (τ : Fin d) (k : ℕ) :\\n    linePath U b τ (k + 1) = linePath U b τ k * U (b + k • e τ) τ := rfl\\n\\ntheorem e_self (τ : Fin d) : (e τ : Site d L) τ = 1 := by\\n  show (Pi.single τ (1 : ZMod L) : Fin d → ZMod L) τ = 1\\n  exact Pi.single_eq_same _ _\\n\\ntheorem e_ne {τ μ : Fin d} (h : μ ≠ τ) : (e τ : Site d L) μ = 0 := by\\n  show (Pi.single τ (1 : ZMod L) : Fin d → ZMod L) μ = 0\\n  exact Pi.single_eq_of_ne h _\\n\\ntheorem sliceBase_add_e (x : Site d L) (τ : Fin d) :\\n    sliceBase (x + e τ) τ = sliceBase x τ := by\\n  funext μ\\n  by_cases h : μ = τ\\n  · subst h; simp [sliceBase]\\n  · simp only [sliceBase, Function.update_of_ne h, Pi.add_apply, e_ne h, add_zero]\\n\\ntheorem sliceBase_add_val [NeZero L] (x : Site d L) (τ : Fin d) :\\n    sliceBase x τ + (x τ).val • e τ = x := by\\n  funext μ\\n  by_cases h : μ = τ\\n  · subst h\\n    rw [Pi.add_apply, Pi.smul_apply, e_self]\\n    simp only [sliceBase, Function.update_self, nsmul_eq_mul, mul_one, zero_add,\\n      ZMod.natCast_zmod_val]\\n  · simp only [Pi.add_apply, Pi.smul_apply, sliceBase, Function.update_of_ne h, e_ne h,\\n      smul_zero, add_zero]\\n\\ntheorem add_e_apply (x : Site d L) (τ : Fin d) : (x + e τ : Site d L) τ = x τ + 1 := by\\n  simp only [Pi.add_apply, e_self]\\n\\ntheorem val_add_e_of_lt [NeZero L] (x : Site d L) (τ : Fin d) (hx : (x τ).val + 1 < L) :\\n    ((x + e τ : Site d L) τ).val = (x τ).val + 1 := by\\n  rw [add_e_apply, ZMod.val_add, ZMod.val_one_eq_one_mod, Nat.one_mod_eq_one.mpr (Nat.ne_of_gt (Nat.lt_of_le_of_lt (Nat.le_add_left 1 _) hx)),\\n    Nat.mod_eq_of_lt hx]\\n\\ntheorem val_add_e_of_last [NeZero L] (x : Site d L) (τ : Fin d) (hx : (x τ).val + 1 = L) :\\n    ((x + e τ : Site d L) τ).val = 0 := by\\n  have h1 : (x + e τ : Site d L) τ = (((x τ).val + 1 : ℕ) : ZMod L) := by\\n    rw [add_e_apply]; push_cast; rw [ZMod.natCast_zmod_val]\\n  rw [h1, hx, ZMod.natCast_self, ZMod.val_zero]\\n\\n/-- Away from the last slice, the axial gauge trivializes every `τ`-link. -/\\ntheorem axialGauge_link [NeZero L] (U : LinkConfig G d L) (τ : Fin d) (x : Site d L)\\n    (hx : (x τ).val + 1 < L) : gaugeAct (axialGauge U τ) U x τ = 1 := by\\n  simp only [gaugeAct, axialGauge]\\n  rw [sliceBase_add_e, val_add_e_of_lt x τ hx, linePath_succ, sliceBase_add_val]\\n  exact mul_inv_cancel _\\n\\n/-- On the last slice, the remaining `τ`-link is the Polyakov loop through `x`. -/\\ntheorem axialGauge_last [NeZero L] (U : LinkConfig G d L) (τ : Fin d) (x : Site d L)\\n    (hx : (x τ).val + 1 = L) :\\n    gaugeAct (axialGauge U τ) U x τ = polyakovLoop U (sliceBase x τ) τ := by\\n  simp only [gaugeAct, axialGauge]\\n  rw [sliceBase_add_e, val_add_e_of_last x τ hx, linePath_zero, inv_one, mul_one,\\n    polyakovLoop, show linePath U (sliceBase x τ) τ L =\\n      linePath U (sliceBase x τ) τ ((x τ).val + 1) from congrArg _ hx.symm,\\n    linePath_succ, sliceBase_add_val]\\n\\n/-- Axial (temporal) gauge on the periodic lattice `(ℤ/Lℤ)^d`, for any gauge group and any\\ndirection `τ`: every configuration is gauge equivalent to one whose `τ`-links are trivial off\\nthe last slice and equal the Polyakov loops on it; every class-function plaquette action\\n(in particular the Wilson action) is unchanged. -/\\ntheorem result :\\n    ∀ (G : Type) [Group G] (d L : ℕ) [NeZero L] (τ : Fin d) (U : LinkConfig G d L),\\n      ∃ g : GaugeTransform G d L,\\n        (∀ x : Site d L, (x τ).val + 1 < L → gaugeAct g U x τ = 1) ∧\\n        (∀ x : Site d L, (x τ).val + 1 = L →\\n          gaugeAct g U x τ = polyakovLoop U (sliceBase x τ) τ) ∧\\n        (∀ f : G → ℝ, IsClassFunction f → latticeAction f (gaugeAct g U) = latticeAction f U) := by\\n  intro G _ d L _ τ U\\n  refine ⟨axialGauge U τ, fun x hx => axialGauge_link U τ x hx,\\n    fun x hx => axialGauge_last U τ x hx, fun f hf => ?_⟩\\n  exact (B_fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2.Contribution.result).1\\n    G d L f hf (axialGauge U τ) U\\n\\nend Contribution\\n\",\n  \"theorem\": \"Contribution.result\",\n  \"dependencies\": [\n    {\n      \"id\": \"pr-10-51d3068eb273-4b9f0e7dcbd1\",\n      \"bundle_hash\": \"fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2\"\n    }\n  ]\n}\n",
+          "proposition_hash": "1592f0c3325498b8446080db85cc7e78f24afca05aac6b5531bef27739e0248f",
+          "protocol_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e",
+          "provenance": {
+            "discovery_basis": "On 2026-11-28 I searched the lgt sources for axial, temporal, Polyakov, center and Bianchi statements. The only axial-gauge content is the pass-through faddeevPopov. Web search for Lean lattice gauge theory found further unaudited GitHub projects; these were not exhaustively checked.",
+            "mode": "formalization",
+            "sources": [
+              {
+                "authors": [
+                  "Michael Creutz"
+                ],
+                "priority_evidence": "Published monograph (Cambridge University Press, 1983); the construction is classical and priority is not claimed.",
+                "reference": "https://doi.org/10.1017/CBO9780511564635",
+                "relationship": "Standard reference for lattice axial gauge fixing and Polyakov loops; this bundle formalizes that construction on the periodic lattice.",
+                "title": "Quarks, Gluons and Lattices"
+              },
+              {
+                "authors": [
+                  "Michael R. Douglas"
+                ],
+                "priority_evidence": "Public repository, inspected at commit b8793ccf6a51e00e9e2b1685ba191b8626e37137 (2026-07-21).",
+                "reference": "https://github.com/mrdouglasny/lgt",
+                "relationship": "Prior Lean library whose axial-gauge Faddeev–Popov step is left as a hypothesis; this bundle proves the gauge-construction part independently.",
+                "title": "lgt — Lattice Gauge Theory in Lean 4"
+              }
+            ]
+          },
+          "related_contributions": [],
+          "repository": "MuncleUscles/yang-mills",
+          "research_direction": "Lattice regularization route: formal gauge fixing toward the transfer-matrix and Faddeev–Popov steps",
+          "statement_hash": "b119862208b1fa110192faffa5dc952f963ca46d265dd0962511ca355c0211cf",
+          "submission_hash": "cbcc39fe4f693915f6c6736eeee66c8eef38b2870cbe13ebd287964a917a63dc",
+          "verification": "verified",
+          "verified_dependencies": [
+            {
+              "artifact_hash": "fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2",
+              "id": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+              "proof_body_use": true
+            }
+          ],
+          "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+          "worker_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
+        },
+        "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+        "use": {
+          "artifact_hash": "4f4126122d0700524796c405e145badf09c1ce0f46ce2280744811f1b2bad118",
+          "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+          "proof_body_use": true
+        },
+        "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F"
+      }
+    ],
+    "evidence_refs": [
+      "pr-15-c4fdad553730-72709631a002",
+      "pr-12-5e1db83b84ba-e1479e1a1833"
+    ],
+    "paid_points": "0",
+    "reason": "The evidence supports meaningful mathematical reuse rather than citation-only dependence. The earlier axial-gauge construction and the downstream center-symmetry arguments have distinct mathematical content; no artificial splitting, circular attribution or duplicate allocation is established. The demonstrated impact does not justify a higher band. Allocate 40 points from the existing 120-point reserve and return the remaining 80 to the downstream contributor. The 480-point upfront payout remains unchanged, the fixed 600-point total is preserved, and no recursive propagation occurs.",
+    "returned_points": "0",
+    "round": 0,
+    "route_commitments": [
+      {
+        "id": "pr-15-c4fdad553730-72709631a002",
+        "revision": 0,
+        "route_hash": "c760951a7322e95cd354084dabf373b789b2d7e73a05fc7081acba574efdb0c0"
+      },
+      {
+        "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+        "revision": 0,
+        "route_hash": "c760951a7322e95cd354084dabf373b789b2d7e73a05fc7081acba574efdb0c0"
+      }
+    ],
+    "route_commitments_hash": "e0df7e95c19ff7106c8fc5621a40ee7459c5e7852718a7cfab944a62122b0219",
+    "route_history": [],
+    "routing_revision": 0,
+    "source_digest": "758d117dcf01c766e7d9f3d6fe8e1477330f214265b0941c5b965f451dac4294",
+    "status": "provisional"
   }
 }
