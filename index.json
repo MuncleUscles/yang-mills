@@ -13,7 +13,7 @@
       "evidenceKind": "formal",
       "verification": "verified",
       "title": "Axial gauge on the periodic lattice: every gauge field reduces to Polyakov loops on one slice",
-      "status": "provisional",
+      "status": "approved",
       "points": "0",
       "impact": null,
       "dependencies": [
@@ -21,7 +21,7 @@
       ],
       "report": "reports/pr-12-5e1db83b84ba-e1479e1a1833.json",
       "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46090496568",
-      "updatedAt": "2026-11-28T01:06:10.538Z",
+      "updatedAt": "2026-11-28T01:06:16.287Z",
       "commentId": 7231074577,
       "needsResume": true
     },
