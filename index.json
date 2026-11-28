@@ -13,7 +13,7 @@
       "evidenceKind": "formal",
       "verification": "verified",
       "title": "Center symmetry on the lattice: twist invariance, Polyakov-loop covariance and the ⟨χ(P)⟩ = 0 selection rule",
-      "status": "submitted",
+      "status": "provisional",
       "points": "0",
       "impact": null,
       "dependencies": [
@@ -21,7 +21,7 @@
       ],
       "report": "reports/pr-15-c4fdad553730-72709631a002.json",
       "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
-      "updatedAt": "2026-11-28T02:16:59.437Z",
+      "updatedAt": "2026-11-28T02:17:04.383Z",
       "commentId": 7232145992,
       "needsResume": true
     },
