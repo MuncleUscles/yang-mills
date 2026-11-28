@@ -146651,7 +146651,7 @@
     }
   },
   "startedAt": "2026-11-27T23:48:19.159Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x86349d111DE1A8911B04a499f8512455601341bf",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -146976,15 +146976,15 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-28T00:08:50.412Z",
+  "updatedAt": "2026-11-28T00:08:56.738Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46085783598",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795824757,
     "digest": "37dbabce6afe38c4b0a7343e02716355d0ae283113f9c59fa5def63a3ecfc5e0",
     "evidence": {
       "artifact_hash": "fe98bbfbfb97628232bb09c5964d9ee6fa045bd4f96501a460ab0583772ba5a2",
@@ -147048,8 +147048,18 @@
       "worker_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "400",
+      "evidence_refs": [
+        "pr-10-51d3068eb273-4b9f0e7dcbd1"
+      ],
+      "novelty": 1,
+      "reason": "Accept as modest formalization and integration of classical finite-lattice Yang–Mills infrastructure, not as mathematical discovery. The verified statement uses substantive, standard definitions of links, plaquette holonomy, gauge transformations and the Wilson action. It establishes gauge invariance, nonnegativity, the exact Frobenius-distance identity, and the zero-action characterization, with faithfulness correctly required to infer flatness. These conclusions are not built into the definitions. The submission honestly acknowledges overlap with an external Lean library; its reported comparison is provenance evidence, not independently established priority. Incremental repository value lies in the reusable abstract-group and unitary-representation interface and the integrated zero-set and matrix-identity proofs. The elementary textbook mathematics warrants limited novelty and significance credit. No quantum measure, continuum construction, correlation decay or positive mass gap is established, and flat configurations are not classified modulo gauge transformations. Credit is for this single integrated infrastructure contribution, not separate discovery awards for its component lemmas.",
+      "reusability": 2,
+      "significance": 1
+    }
   },
   "reviewLinkHash": "0x3be2109eecacde35d53fdba0c4fab0b7814dfd8ab51041648495dfdc5deea242"
 }
