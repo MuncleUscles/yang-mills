@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "id": "pr-16-dd110588616d-28ad2bec85d1",
+      "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
+      "chainId": 61999,
+      "repository": "MuncleUscles/yang-mills",
+      "pr": 16,
+      "head": "dd110588616d1940c59cd75f85f4e4be58ff1455",
+      "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+      "policy": "56e3d0e86958d1f5f36976c8eecf234a3f8117557e7c5d6f6f0395d59be6234d",
+      "protocolCommit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e",
+      "evidenceKind": "formal",
+      "verification": "verified",
+      "title": "Classical vacua of lattice Yang–Mills reduce to static spatial links and parallel-transported Polyakov loops",
+      "status": "verifying",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-16-dd110588616d-28ad2bec85d1.json",
+      "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46098171894",
+      "updatedAt": "2026-11-28T02:35:53.606Z",
+      "commentId": 7232368336,
+      "needsResume": true
+    },
+    {
       "id": "pr-15-c4fdad553730-72709631a002",
       "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
       "chainId": 61999,
