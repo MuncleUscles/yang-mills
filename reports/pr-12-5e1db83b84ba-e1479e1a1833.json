@@ -132597,7 +132597,7 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-28T01:13:58.702Z",
+  "updatedAt": "2026-11-28T01:14:05.791Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46090496568",
   "record": {
     "adjudication_finished_round": 0,
@@ -132605,7 +132605,7 @@
     "award_budget": "400",
     "challenge_reviews": [],
     "challenges": [],
-    "credited_points": "320",
+    "credited_points": "374",
     "deadline": 1795827921,
     "digest": "a48fbfb1b329fef94fcca1111a0fb9768a6a9528f1d6c4f9b4a1fe2e56a998d1",
     "evidence": {
@@ -132680,8 +132680,8 @@
     "impact_reserve": "80",
     "initial_paid": "320",
     "merge_commit": "2153022b73be54120d8ccdad112e59a9ba37079a",
-    "reserve_returned": "0",
-    "reserve_settled": false,
+    "reserve_returned": "54",
+    "reserve_settled": true,
     "round": 0,
     "status": "credited",
     "verdict": {
@@ -132799,9 +132799,17 @@
       "pr-12-5e1db83b84ba-e1479e1a1833",
       "pr-10-51d3068eb273-4b9f0e7dcbd1"
     ],
-    "paid_points": "0",
+    "paid_points": "26",
     "reason": "The axial-gauge construction and final-slice Polyakov-product formula add distinct mathematical content beyond the earlier gauge-invariance result, so the evidence does not indicate artificial splitting or circular attribution. The inherited invariance clause is credited only as infrastructure reuse, not as a new discovery or a separate duplicated award. Allocate one band, paying 26 points from the existing 80-point reserve; return the remaining 54 points to the downstream contributor. The upfront payout remains unchanged, with no additional issuance or recursive propagation. The evidence does not justify spending further bands.",
-    "returned_points": "0",
+    "recipient_allocations": [
+      {
+        "id": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+        "points": "26",
+        "subject": "contributor",
+        "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F"
+      }
+    ],
+    "returned_points": "54",
     "round": 0,
     "route_commitments": [
       {
@@ -132819,6 +132827,6 @@
     "route_history": [],
     "routing_revision": 0,
     "source_digest": "a48fbfb1b329fef94fcca1111a0fb9768a6a9528f1d6c4f9b4a1fe2e56a998d1",
-    "status": "provisional"
+    "status": "settled"
   }
 }
