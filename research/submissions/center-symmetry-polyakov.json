@@ -1,0 +1,69 @@
+{
+  "schema_version": 3,
+  "problem": "yang-mills",
+  "kind": "lemma",
+  "title": "Center symmetry on the lattice: twist invariance, Polyakov-loop covariance and the ⟨χ(P)⟩ = 0 selection rule",
+  "claim": "For any group G, central element z, d, L ≥ 1 and direction τ on the periodic lattice (ℤ/Lℤ)^d, the Lean theorem Contribution.result proves four things. (1) The center twist multiplies every τ-link leaving one slice x_τ = t₀ by z. It leaves every plaquette, and hence every plaquette action (Wilson or otherwise, no class-function hypothesis), exactly invariant. (2) The Polyakov loop P_b (from accepted pr-12) is gauge covariant, P_b(gU) = g_b P_b(U) g_b⁻¹. The twist of the slice through b multiplies it by z, P_b ↦ z P_b. So χ(P_b) is gauge invariant for class functions χ, yet charged under the center. (3) Selection rule: let E be any ℂ-linear expectation on observables that is invariant under the twist. If χ(z h) = ω χ(h) with ω ≠ 1 (e.g. χ = tr in the fundamental of SU(N), z = e^{2πi/N}), then E(χ∘P_b) = 0. This is the lattice form of the statement that an unbroken center symmetry forces a vanishing Polyakov-loop expectation, the classic confinement order parameter ('t Hooft; Svetitsky–Yaffe). (4) Applying pr-12's axial gauge to the twisted configuration, the residual last-slice link equals z times the original Polyakov loop. The twist is visible exactly in the gauge-fixed residual data. Item (2) also supplies the precise covariance statement that the pr-12 review asked for: the Polyakov element is covariant by conjugation, and its class-function evaluations are invariant.",
+  "novelty": "This builds on accepted track results pr-12 (lines, Polyakov loops, axial gauge; its theorem is used in part (4)) and pr-10 (plaquettes, gauge action, plaquette actions). No accepted track contribution treats center symmetry. The mathematics is classical ('t Hooft 1978; Svetitsky–Yaffe 1982; Polyakov 1978). In the external Lean library lgt (Douglas), a search of commit b8793ccf found no center, Polyakov or twist statements. New relative to the track: an exact formal center twist for arbitrary groups; invariance of all plaquette actions under it; gauge covariance of Polyakov loops; their exact center charge; the abstract linear-expectation selection rule; and the combination with the pr-12 axial gauge.",
+  "prior_art": [
+    {
+      "reference": "Accepted track contribution pr-12-5e1db83b84ba-e1479e1a1833 (axial gauge and Polyakov loops)",
+      "relationship": "Imported dependency: supplies linePath, polyakovLoop and sliceBase; its theorem result is used to obtain the axial gauge in part (4). Part (2) answers its review's remark on covariance."
+    },
+    {
+      "reference": "Accepted track contribution pr-10-51d3068eb273-4b9f0e7dcbd1 (Wilson lattice action foundations)",
+      "relationship": "Transitively imported: plaquette, gaugeAct, latticeAction and its plaquette_self and plaquette_swap lemmas are reused in the twist-invariance proof."
+    },
+    {
+      "reference": "G. 't Hooft, On the phase transition towards permanent quark confinement, Nucl. Phys. B 138 (1978) 1, https://doi.org/10.1016/0550-3213(78)90153-0",
+      "relationship": "Introduces center (Z_N) symmetry of pure gauge theory and its role in confinement; this contribution formalizes the lattice center twist and its invariance."
+    },
+    {
+      "reference": "B. Svetitsky and L. G. Yaffe, Critical behavior at finite-temperature confinement transitions, Nucl. Phys. B 210 (1982) 423, https://doi.org/10.1016/0550-3213(82)90172-9",
+      "relationship": "Uses the Polyakov loop as the center-symmetry order parameter; part (3) is the elementary selection rule underlying this use, proved for any twist-invariant linear expectation."
+    }
+  ],
+  "research_direction": "Lattice regularization route: formal center symmetry and Polyakov-loop order parameter for confinement",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1016/0550-3213(78)90153-0",
+        "title": "On the phase transition towards permanent quark confinement",
+        "authors": [
+          "Gerard 't Hooft"
+        ],
+        "relationship": "Source of center symmetry in gauge theory; the lattice twist formalized here is its standard realization.",
+        "priority_evidence": "Published in Nuclear Physics B 138 (1978); classical, no priority claimed."
+      },
+      {
+        "reference": "https://doi.org/10.1016/0550-3213(82)90172-9",
+        "title": "Critical behavior at finite-temperature confinement transitions",
+        "authors": [
+          "Benjamin Svetitsky",
+          "Laurence G. Yaffe"
+        ],
+        "relationship": "Standard reference for the Polyakov loop as the order parameter of center symmetry; part (3) formalizes the selection rule.",
+        "priority_evidence": "Published in Nuclear Physics B 210 (1982); classical, no priority claimed."
+      }
+    ],
+    "discovery_basis": "On 2026-11-28 I searched the lgt sources (commit b8793ccf) for center, Polyakov, twist and confinement statements and found none. I checked the accepted track records pr-10 and pr-12. Web search for Lean formalizations of lattice center symmetry found nothing beyond unaudited GitHub projects. The search was not exhaustive."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/center-symmetry-polyakov.json",
+    "reproduce": "Run the trusted open-agent check research/submissions/center-symmetry-polyakov.json --lean (pinned Lean 4.36.0 / Mathlib fc4f59e5; dependency pr-12, and transitively pr-10, fetched by exact bundle hash)."
+  },
+  "dependencies": [
+    {
+      "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+      "use": "Imports linePath, polyakovLoop, sliceBase and the shift lemmas; its theorem result provides the axial gauge applied to the twisted configuration in part (4).",
+      "importance": "Essential: the Polyakov loop studied here is pr-12's definition, and part (4) is a statement about pr-12's gauge-fixed residual links."
+    }
+  ],
+  "attribution": {
+    "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+    "contributions": "The Lean definitions, statements and proofs were written by an AI coding agent (Claude, Anthropic) on behalf of the wallet holder, who directed the submission. No third-party code is included."
+  },
+  "limitations": "This is classical, configuration-level infrastructure. The expectation E in (3) is an arbitrary twist-invariant linear functional. The Haar/Wilson Gibbs measure is not constructed here, and its twist invariance is not proved; that needs Haar measure invariance under multiplication by z. The rule therefore gives ⟨χ(P)⟩ = 0 only once such a measure-level invariance is supplied, and it says nothing about spontaneous breaking, the deconfinement transition or area-law confinement. The twist is stated for a single slice; for (2)–(3) the slice passes through the Polyakov base point. Nothing here constructs the continuum theory or proves a mass gap."
+}
