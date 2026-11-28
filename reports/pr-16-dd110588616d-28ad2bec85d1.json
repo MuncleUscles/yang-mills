@@ -59497,7 +59497,8 @@
         "method": "begin_adjudication",
         "argsSha256": "739cac00e25ea015d71a0a1d95e3671f6862e40878b38bc0ed8c34cc26b1c4ae",
         "independent": false
-      }
+      },
+      "hash": "0x842c9387262db2ff831d3a2ed1f54a868a09e2f2c88008467a71cf27379bdc3d"
     }
   },
   "startedAt": "2026-11-28T02:32:25.211Z",
@@ -59701,7 +59702,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:37:17.618Z",
+  "updatedAt": "2026-11-28T02:37:23.954Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46098171894",
   "record": {
     "adjudication_finished_round": -1,
