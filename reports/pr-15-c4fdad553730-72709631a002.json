@@ -181197,10 +181197,7 @@
     "verifier": "0xC66C590D36db46e9A012540d535b13dC457af248",
     "signature": "0x40dfa1f9f95ade5c44907a1684749dead77fba75ced27b295b881d399084c7603354a30bb2781167a90062eba6c5655e480629ab091e660d53fef464c69226371c"
   },
-  "blockedConsensus": false,
-  "error": "fetch failed",
-  "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:29:33.854Z",
+  "updatedAt": "2026-11-28T02:29:38.757Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
   "record": {
     "adjudication_finished_round": 0,
@@ -181441,5 +181438,23 @@
     "routing_revision": 0,
     "source_digest": "758d117dcf01c766e7d9f3d6fe8e1477330f214265b0941c5b965f451dac4294",
     "status": "settled"
-  }
+  },
+  "points": {
+    "impact_points": "66",
+    "initial_points": "1334",
+    "mode": "contribution points on this Intelligent Contract",
+    "note_points": "0",
+    "points": "1400",
+    "problem": "yang-mills",
+    "returned_points": "214",
+    "total_award_budgets": "1400",
+    "total_awarded": "1400",
+    "total_impact_points": "66",
+    "total_initial_points": "1334",
+    "total_note_points": "0",
+    "total_reserved_points": "0",
+    "total_returned_points": "214",
+    "transferable": false
+  },
+  "completedAt": "2026-11-28T02:29:38.757Z"
 }
