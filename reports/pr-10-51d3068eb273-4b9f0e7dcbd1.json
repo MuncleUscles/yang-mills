@@ -152653,7 +152653,7 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-28T00:15:59.133Z",
+  "updatedAt": "2026-11-28T00:16:06.471Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46085783598",
   "record": {
     "adjudication_finished_round": 0,
@@ -152754,5 +152754,32 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "b905fe52e16f07dd76faf72a43d6fef3b1cc7428"
+  },
+  "impact": {
+    "allocations": [],
+    "band_points": 26,
+    "budget": 80,
+    "challenge_reviews": [],
+    "challenges": [],
+    "deadline": 0,
+    "downstream": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+    "eligible": [],
+    "paid_points": "0",
+    "reason": "No verified direct dependency; the unused reserve returns to the result's contributor.",
+    "recipient_allocations": [],
+    "returned_points": "80",
+    "round": 0,
+    "route_commitments": [
+      {
+        "id": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+        "revision": 0,
+        "route_hash": "c760951a7322e95cd354084dabf373b789b2d7e73a05fc7081acba574efdb0c0"
+      }
+    ],
+    "route_commitments_hash": "8dee4bbe4a8638edd6b9c58395de2fa9682d42614f7ed7a021c1c882c8524aaa",
+    "route_history": [],
+    "routing_revision": 0,
+    "source_digest": "37dbabce6afe38c4b0a7343e02716355d0ae283113f9c59fa5def63a3ecfc5e0",
+    "status": "settled"
   }
 }
