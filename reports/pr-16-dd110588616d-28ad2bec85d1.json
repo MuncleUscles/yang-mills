@@ -69561,10 +69561,10 @@
     "verifier": "0xC66C590D36db46e9A012540d535b13dC457af248",
     "signature": "0x617153668e306d8cd1ffd54389f8715e37f455aaf3aecdf12970b0b1c8f34b0a4f084ecd4c60d0ae276594c589756f677c16f1cee68dc456e48e8e46cfb505ec1c"
   },
-  "blockedConsensus": false,
-  "error": "fetch failed",
-  "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:46:08.579Z",
+  "blockedConsensus": true,
+  "error": "Transaction UNDETERMINED: 0xce14072e1f10ebb5ccc61837890f756134618de960f9aee2fc483c2a3a3e161f",
+  "temporaryFailure": false,
+  "updatedAt": "2026-11-28T02:47:50.721Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46098171894",
   "record": {
     "adjudication_finished_round": 0,
@@ -69672,5 +69672,18 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "6703f590e0058b1a8120c4dd453b346130e11f9a"
-  }
+  },
+  "operationalErrors": [
+    {
+      "stage": "post-finalization",
+      "message": "Transaction UNDETERMINED: 0xce14072e1f10ebb5ccc61837890f756134618de960f9aee2fc483c2a3a3e161f",
+      "at": "2026-11-28T02:47:50.721Z",
+      "finalizedCheck": {
+        "id": 140838603428,
+        "head": "dd110588616d1940c59cd75f85f4e4be58ff1455",
+        "receiptHash": "0x674513f77e775e9f41e7263c538fc169861946fac173e3bf80b70e0350df6825"
+      },
+      "recordStatus": "credited"
+    }
+  ]
 }
