@@ -77192,7 +77192,7 @@
     }
   },
   "startedAt": "2026-11-28T00:41:42.479Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x86349d111DE1A8911B04a499f8512455601341bf",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -77440,15 +77440,15 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-28T01:02:27.390Z",
+  "updatedAt": "2026-11-28T01:02:32.691Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46090496568",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795827921,
     "digest": "a48fbfb1b329fef94fcca1111a0fb9768a6a9528f1d6c4f9b4a1fe2e56a998d1",
     "evidence": {
       "artifact_hash": "4f4126122d0700524796c405e145badf09c1ce0f46ce2280744811f1b2bad118",
@@ -77520,8 +77520,19 @@
       "worker_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "400",
+      "evidence_refs": [
+        "pr-12-5e1db83b84ba-e1479e1a1833",
+        "pr-10-51d3068eb273-4b9f0e7dcbd1"
+      ],
+      "novelty": 1,
+      "reason": "Accept as a modest formalization of classical finite-lattice axial gauge fixing, not a mathematical discovery or a solution of the Yang–Mills problem. The verified statement constructs a gauge transformation trivializing the selected-direction links away from the final slice and identifies the remaining links with explicitly defined ordered Polyakov products. These definitions express genuine lattice holonomy, and the construction is independently useful marginal work beyond the previously credited gauge-invariance result. Its arbitrary-group and arbitrary-direction formulation provides reusable infrastructure. Action invariance is inherited directly from pr-10 and earns no new credit; that contribution is an acknowledged, verified substantive dependency. The normal-form construction is not merely a repackaging of it. The submission's interpretation needs qualification: a nonabelian Polyakov-loop element is generally gauge covariant by conjugation, rather than gauge invariant; its conjugacy class or class-function evaluations provide invariant data. The submitted theorem does not separately establish the full obstruction criterion, residual-gauge classification, or center-symmetry claims. Credit is limited to the actual construction and residue formula. No measure-theoretic Faddeev–Popov identity, transfer matrix, continuum quantum theory, or positive mass gap is established.",
+      "reusability": 2,
+      "significance": 1
+    }
   },
   "reviewLinkHash": "0xd04a1816673d99a33410f37eac77845b6f2d469260d2e3afd3067d8c34b45250"
 }
