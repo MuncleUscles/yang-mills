@@ -1,0 +1,64 @@
+{
+  "schema_version": 3,
+  "problem": "yang-mills",
+  "kind": "lemma",
+  "title": "Axial gauge on the periodic lattice: every gauge field reduces to Polyakov loops on one slice",
+  "claim": "For any group G, any d, L ≥ 1, any direction τ and any link configuration U on the periodic lattice (ℤ/Lℤ)^d, the Lean theorem Contribution.result constructs an explicit gauge transformation g (parallel transport along the τ-line from the slice x_τ = 0) such that: (1) every τ-link off the last slice becomes trivial, (gU)_{x,τ} = 1 whenever x_τ + 1 < L; (2) on the last slice, x_τ = L − 1, the remaining τ-link equals the Polyakov loop P(b) = U_{b,τ} U_{b+τ,τ} ⋯ U_{b+(L−1)τ,τ} of the τ-line through x, with b its point on the slice x_τ = 0; (3) every class-function plaquette action, including the Wilson action of accepted contribution pr-10, is unchanged. This is the axial (temporal) gauge used to build the transfer matrix and Hamiltonian formulation and in Faddeev–Popov arguments on finite lattices. On the torus the τ-links cannot all be removed. The statement pins down the exact obstruction: one Polyakov loop per τ-line. It is the gauge-invariant data that center symmetry acts on.",
+  "novelty": "This builds on the accepted track result pr-10 (lattice, plaquettes, gauge action, class-function action invariance), which it imports and uses. The mathematics is classical (axial/temporal gauge, e.g. Creutz's and Montvay–Münster's textbooks). In the external Lean library lgt (Douglas), the corresponding step is not proved. lgt's GaugeFixing.lean states that constructing the gauge transform that fixes the axial links 'requires' the tree argument, and its faddeevPopov theorem takes the Faddeev–Popov identity as a hypothesis, hFP. This bundle supplies an explicit, axiom-clean construction for the periodic lattice, any group and any direction, together with the exact Polyakov-loop residue on the last slice.",
+  "prior_art": [
+    {
+      "reference": "Accepted track contribution pr-10-51d3068eb273-4b9f0e7dcbd1 (Wilson lattice action: gauge invariance and classical vacua)",
+      "relationship": "Imported dependency: supplies Site, e, LinkConfig, GaugeTransform, gaugeAct, latticeAction and IsClassFunction, and its theorem result.1 proves part (3)."
+    },
+    {
+      "reference": "M. R. Douglas, lgt — LGT/MassGap/GaugeFixing.lean, https://github.com/mrdouglasny/lgt (commit b8793ccf)",
+      "relationship": "States the axial-gauge Faddeev–Popov identity but leaves the gauge-fixing construction unproved: faddeevPopov passes the identity through as hypothesis hFP. This bundle proves the construction step (the gauge transform), not the measure-theoretic identity."
+    },
+    {
+      "reference": "M. Creutz, Quarks, Gluons and Lattices (Cambridge University Press, 1983), https://doi.org/10.1017/CBO9780511564635",
+      "relationship": "Textbook source for axial/temporal gauge fixing on the lattice and for the residual Polyakov-loop degrees of freedom on a torus."
+    }
+  ],
+  "research_direction": "Lattice regularization route: formal gauge fixing toward the transfer-matrix and Faddeev–Popov steps",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1017/CBO9780511564635",
+        "title": "Quarks, Gluons and Lattices",
+        "authors": [
+          "Michael Creutz"
+        ],
+        "relationship": "Standard reference for lattice axial gauge fixing and Polyakov loops; this bundle formalizes that construction on the periodic lattice.",
+        "priority_evidence": "Published monograph (Cambridge University Press, 1983); the construction is classical and priority is not claimed."
+      },
+      {
+        "reference": "https://github.com/mrdouglasny/lgt",
+        "title": "lgt — Lattice Gauge Theory in Lean 4",
+        "authors": [
+          "Michael R. Douglas"
+        ],
+        "relationship": "Prior Lean library whose axial-gauge Faddeev–Popov step is left as a hypothesis; this bundle proves the gauge-construction part independently.",
+        "priority_evidence": "Public repository, inspected at commit b8793ccf6a51e00e9e2b1685ba191b8626e37137 (2026-07-21)."
+      }
+    ],
+    "discovery_basis": "On 2026-11-28 I searched the lgt sources for axial, temporal, Polyakov, center and Bianchi statements. The only axial-gauge content is the pass-through faddeevPopov. Web search for Lean lattice gauge theory found further unaudited GitHub projects; these were not exhaustively checked."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/axial-gauge-polyakov.json",
+    "reproduce": "Run the trusted open-agent check research/submissions/axial-gauge-polyakov.json --lean (pinned Lean 4.36.0 / Mathlib fc4f59e5; the dependency pr-10 is fetched by exact bundle hash)."
+  },
+  "dependencies": [
+    {
+      "id": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+      "use": "Definitions of the lattice, links, gauge action, plaquette action and class functions are imported unchanged; theorem result.1 (class-function action invariance) proves part (3) for the constructed gauge.",
+      "importance": "Essential: the gauge-fixing statement is about pr-10's gauge action, and the invariance of the Wilson and every class-function action under the fixing is exactly pr-10's theorem."
+    }
+  ],
+  "attribution": {
+    "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+    "contributions": "The Lean construction, statements and proofs were written by an AI coding agent (Claude, Anthropic) on behalf of the wallet holder, who directed the submission. No third-party code is included."
+  },
+  "limitations": "This is a purely classical, configuration-level statement. It does not prove the Faddeev–Popov identity for the Haar/Wilson measure (Fubini and Haar invariance are not formalized), and it does not construct the transfer matrix. Only τ-links are fixed. Gauge fixing of spatial links (a full maximal-tree gauge) and the residual τ-independent gauge freedom are not treated. Uniqueness of the gauge-fixed form is not proved. Nothing here addresses the quantum theory, the continuum limit or the mass gap."
+}
