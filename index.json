@@ -20,13 +20,29 @@
       "impactReserve": "120",
       "reserveReturned": "0",
       "reserveSettled": false,
-      "impact": null,
+      "impact": {
+        "downstream": "pr-15-c4fdad553730-72709631a002",
+        "status": "provisional",
+        "budget": 120,
+        "band_points": 40,
+        "paid_points": "0",
+        "returned_points": "0",
+        "allocations": [
+          {
+            "band": 1,
+            "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+            "points": "40",
+            "reason": "Substantive infrastructure reuse is demonstrated: the downstream covariance and center-charge proofs use the earlier linePath and polyakovLoop definitions, and the final proof applies the earlier axial-gauge theorem to the twisted configuration, composing its last-slice identity with the center-charge identity. This avoids reconstructing the gauge transformation and residual-link proof. However, these are replaceable classical constructions; the downstream telescoping, twist and selection-rule arguments are proved separately. One modest infrastructure band is warranted, without discovery credit or separate awards for these overlapping uses."
+          }
+        ],
+        "reason": "The evidence supports meaningful mathematical reuse rather than citation-only dependence. The earlier axial-gauge construction and the downstream center-symmetry arguments have distinct mathematical content; no artificial splitting, circular attribution or duplicate allocation is established. The demonstrated impact does not justify a higher band. Allocate 40 points from the existing 120-point reserve and return the remaining 80 to the downstream contributor. The 480-point upfront payout remains unchanged, the fixed 600-point total is preserved, and no recursive propagation occurs."
+      },
       "dependencies": [
         "pr-12-5e1db83b84ba-e1479e1a1833"
       ],
       "report": "reports/pr-15-c4fdad553730-72709631a002.json",
       "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
-      "updatedAt": "2026-11-28T02:24:29.920Z",
+      "updatedAt": "2026-11-28T02:24:36.029Z",
       "commentId": 7232145992,
       "needsResume": true
     },
