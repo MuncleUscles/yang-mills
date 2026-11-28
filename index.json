@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "id": "pr-15-c4fdad553730-72709631a002",
+      "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
+      "chainId": 61999,
+      "repository": "MuncleUscles/yang-mills",
+      "pr": 15,
+      "head": "c4fdad5537306fc8bb2de3ccd19fdfee32740f66",
+      "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+      "policy": "56e3d0e86958d1f5f36976c8eecf234a3f8117557e7c5d6f6f0395d59be6234d",
+      "protocolCommit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e",
+      "evidenceKind": "formal",
+      "verification": "verified",
+      "title": "Center symmetry on the lattice: twist invariance, Polyakov-loop covariance and the ⟨χ(P)⟩ = 0 selection rule",
+      "status": "verifying",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-15-c4fdad553730-72709631a002.json",
+      "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46096499634",
+      "updatedAt": "2026-11-28T02:13:41.604Z",
+      "commentId": 7232145992,
+      "needsResume": true
+    },
+    {
       "id": "pr-12-5e1db83b84ba-e1479e1a1833",
       "contract": "0x983d27779dF7D495d4c881Ab0925B42A7bBf76d7",
       "chainId": 61999,
