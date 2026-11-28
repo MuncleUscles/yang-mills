@@ -1,10 +1,14 @@
 name: Open research adjudication
+run-name: ${{ inputs.recover_run && 'Automatic research recovery' || github.event.issue.title || 'Open research adjudication' }}
 on:
-  workflow_call:
   issue_comment:
     types: [created]
   workflow_dispatch:
     inputs:
+      recover_run:
+        description: Failed main-branch run ID or deployment catch-up
+        required: false
+        type: string
       comment_id:
         description: Original PR-author signed comment ID to process or resume
         required: false
@@ -12,6 +16,7 @@ on:
   schedule:
     - cron: '7,22,37,52 * * * *'
 permissions:
+  actions: read
   contents: write
   pull-requests: write
   checks: write
@@ -20,7 +25,6 @@ jobs:
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ||
-       github.event_name == 'workflow_run' || github.event_name == 'push' ||
       (github.event.action == 'created' && github.event.issue.pull_request && (startsWith(github.event.comment.body, 'Open-Mathematics-Claim: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Process: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Retry: '))))
     environment: protocol
     concurrency:
@@ -54,7 +58,7 @@ jobs:
           cache-dependency-path: protocol/package-lock.json
       - run: npm ci --ignore-scripts
       - name: Verify protected signing roles and finalized problem configuration
-        if: github.event_name == 'workflow_dispatch' && inputs.comment_id == ''
+        if: github.event_name == 'workflow_dispatch' && inputs.comment_id == '' && inputs.recover_run == ''
         env:
           VERIFIER_SIGNING_KEY: ${{ secrets.VERIFIER_SIGNING_KEY }}
           EXECUTOR_SIGNING_KEY: ${{ secrets.EXECUTOR_SIGNING_KEY }}
@@ -74,7 +78,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/pnp.fun
-          ref: 25c877483987bb48ea4a88fb2e010be9181ec1d3
+          ref: 580c36311c7e24c294120424be394be7f5ca8a00
           path: review
           persist-credentials: false
       - name: Install the review worker’s pinned dependencies
