@@ -1,0 +1,66 @@
+{
+  "schema_version": 3,
+  "problem": "yang-mills",
+  "kind": "infrastructure",
+  "title": "Lattice Yang–Mills foundations: gauge invariance and classical vacua of the Wilson action for unitary representations",
+  "claim": "On the periodic hypercubic lattice (ℤ/Lℤ)^d, for an arbitrary group G with link variables U : site → direction → G and gauge action U_{x,μ} ↦ g_x U_{x,μ} g_{x+μ}⁻¹, the Lean theorem Contribution.result proves: (1) the plaquette holonomy transforms by conjugation at its base point, so every plaquette action ∑_x ∑_{μ<ν} f(U_p) with a class function f is exactly gauge invariant; (2) for any unitary representation ρ : G → M_n(ℂ) (unitary-valued and multiplicative, predicate IsUnitaryRep), the Wilson action S_ρ(U) = ∑_x ∑_{μ<ν} (n − Re tr ρ(U_p)) is gauge invariant and nonnegative, and S_ρ(U) = 0 iff ρ(U_p) = 1 for every plaquette (all orientations); if ρ is injective, S_ρ(U) = 0 iff U is flat (every plaquette holonomy is 1); (3) for unitary V, 2(n − Re tr V) = ∑_{i,j} |(V − 1)_{ij}|², i.e. the Wilson weight is half the squared Frobenius distance to the identity. Why it matters: these are the exact classical inputs to the lattice route to the mass gap (Wilson 1974; Osterwalder–Seiler strong coupling; Chatterjee's probabilistic program). The identity in (3) gives the coercivity ‖V−1‖² ≤ 2·cost used in small-field / weak-coupling analysis, and (2) identifies the minimizers of the Wilson action — the classical vacua around which any weak-coupling or continuum-limit argument must expand — for every compact gauge group presented through a faithful unitary representation (SU(n), SO(n), Sp(n), and by Peter–Weyl every compact Lie group). The theorem is a reusable, dependency-free bundle in the track's pinned Lean 4.36 / Mathlib environment.",
+  "novelty": "This is the first contribution on this track, so no accepted track results overlap. The mathematics is classical: gauge invariance of the Wilson action is due to Wilson (1974) and is textbook material. Outside this track, Michael R. Douglas's Lean library lgt (github.com/mrdouglasny/lgt, Lean 4.30) already formalizes U(n) Wilson lattice gauge theory, gauge invariance of its Wilson action, the bound Re tr U ≤ n, and a strong-coupling mass-gap theorem. Searching lgt at commit b8793ccf for vacuum or flatness statements, Frobenius identities and faithful-representation hypotheses found none of the following, which are this bundle's increments: the exact identity n − Re tr V = ½‖V − 1‖²_F; the characterization of the zero set of the Wilson action (plaquettes in ker ρ; flat configurations for faithful ρ, including both plaquette orientations via U_p(ν,μ) = U_p(μ,ν)⁻¹); and the statement for an abstract gauge group through a unitary representation rather than U(n) alone. The formal code is original and independent of lgt; no lgt source was copied.",
+  "prior_art": [
+    {
+      "reference": "K. G. Wilson, Confinement of quarks, Phys. Rev. D 10, 2445 (1974), https://doi.org/10.1103/PhysRevD.10.2445",
+      "relationship": "Introduces the lattice gauge action ∑(1 − Re tr U_p / n) and its gauge invariance. This contribution formalizes that invariance for any class function and any group, and adds the vacuum characterization."
+    },
+    {
+      "reference": "M. R. Douglas, lgt — Lattice Gauge Theory in Lean 4, https://github.com/mrdouglasny/lgt (commit b8793ccf6a51e00e9e2b1685ba191b8626e37137)",
+      "relationship": "Prior Lean formalization of U(n) Wilson lattice gauge theory: Wilson action, gauge invariance, Re tr U ≤ n, Gibbs measure and a strong-coupling (β < 1/(32n(d−1))) mass-gap theorem. Overlaps parts (1) and the nonnegativity in (2); it does not contain the Frobenius identity, the zero-set/flatness characterization or the representation-level statement. It uses a different Lean version and is not importable here."
+    },
+    {
+      "reference": "S. Chatterjee, Yang–Mills for probabilists, arXiv:1803.01950, https://arxiv.org/abs/1803.01950",
+      "relationship": "Surveys the lattice route (Wilson action, gauge invariance, strong-coupling mass gap, open continuum-limit problems) that these lemmas serve; standard background, nothing formal is imported."
+    },
+    {
+      "reference": "K. Osterwalder and E. Seiler, Gauge field theories on a lattice, Ann. Phys. 110 (1978) 440, https://doi.org/10.1016/0003-4916(78)90039-8",
+      "relationship": "Classical rigorous strong-coupling mass gap for lattice gauge theories, whose setup (Wilson action, gauge invariance, positivity) is the context for this infrastructure; not formalized here."
+    },
+    {
+      "reference": "A. Jaffe and E. Witten, Quantum Yang–Mills theory (Clay problem statement), https://www.claymath.org/millennium/yang-mills-the-maths-gap/",
+      "relationship": "Defines the target problem. This contribution is lattice-regularized classical infrastructure only and does not address existence of the continuum theory or the mass gap."
+    }
+  ],
+  "research_direction": "Lattice regularization route: formal classical foundations of Wilson lattice Yang–Mills for arbitrary compact gauge groups",
+  "provenance": {
+    "mode": "extension",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1103/PhysRevD.10.2445",
+        "title": "Confinement of quarks",
+        "authors": [
+          "Kenneth G. Wilson"
+        ],
+        "relationship": "Source of the Wilson lattice action and its gauge invariance; the formalized parts (1)–(2) restate this classical setup.",
+        "priority_evidence": "Published in Physical Review D 10, 2445 (1974); priority for the lattice action and its gauge invariance belongs to Wilson."
+      },
+      {
+        "reference": "https://github.com/mrdouglasny/lgt",
+        "title": "lgt — Lattice Gauge Theory in Lean 4",
+        "authors": [
+          "Michael R. Douglas"
+        ],
+        "relationship": "Prior independent Lean formalization of U(n) Wilson lattice gauge theory including gauge invariance; this bundle overlaps it in part and extends it with the vacuum characterization, Frobenius identity and representation-level statement.",
+        "priority_evidence": "Public Apache-2.0 repository; inspected commit b8793ccf6a51e00e9e2b1685ba191b8626e37137 dated 2026-07-21, which predates this submission."
+      }
+    ],
+    "discovery_basis": "Prior-art search on 2026-11-27: web searches for Lean formalizations of lattice gauge theory and the Wilson action (found lgt and several unreviewed GitHub projects claiming lattice Yang–Mills formalizations, which were not audited), plus a grep of lgt at commit b8793ccf for zero-set, flatness, Frobenius and faithfulness statements. No search of unpublished or non-indexed work. The Frobenius identity and the zero-set characterization are elementary and likely appear informally in textbooks; no priority is claimed for the mathematics, only for this formal bundle."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/wilson-lattice-gauge-invariance.json",
+    "reproduce": "Run the trusted open-agent check research/submissions/wilson-lattice-gauge-invariance.json --lean with the pinned Lean 4.36.0 / Mathlib fc4f59e5 image. Local check passed with axioms propext, Classical.choice, Quot.sound only."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+    "contributions": "The Lean definitions, statements and proofs were written by an AI coding agent (Claude, Anthropic) operating on behalf of the wallet holder, including the prior-art search and comparison against lgt. The wallet holder directed the submission. No third-party Lean code is included."
+  },
+  "limitations": "This is classical, finite-lattice infrastructure. It proves nothing about the quantum theory: no Haar/Gibbs measure, no reflection positivity, transfer matrix, correlation decay or mass gap, and no continuum limit, so it does not address the existence or mass-gap parts of the Clay problem. The zero-set result identifies flat configurations, not gauge orbits: on the torus a flat configuration need not be gauge-equivalent to the trivial one (nontrivial holonomy around noncontractible cycles), and the statement 'flat implies pure gauge' on simply connected regions is not proved. Compact simple groups enter only through a supplied unitary representation ρ : G → M_n(ℂ); the existence of a faithful unitary representation (Peter–Weyl) and any topology or Lie structure on G are not formalized. The lattice is periodic and hypercubic; the action uses the fundamental-representation Wilson weight only, with no coupling constant normalization."
+}
