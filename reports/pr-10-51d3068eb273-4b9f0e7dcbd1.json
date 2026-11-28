@@ -31,7 +31,17 @@
   },
   "commentId": 7230378688,
   "commentCreatedAt": "2026-11-27T23:44:57Z",
-  "transactions": {},
+  "transactions": {
+    "register": {
+      "intent": {
+        "address": "0x983d27779df7d495d4c881ab0925b42a7bbf76d7",
+        "sender": "0xc66c590d36db46e9a012540d535b13dc457af248",
+        "method": "register",
+        "argsSha256": "8b0ae6dba1ceecb269311c7a2233bbda440530bc315b9f19669ad8ea3361cbf4",
+        "independent": false
+      }
+    }
+  },
   "startedAt": "2026-11-27T23:48:19.159Z",
   "status": "verifying",
   "walletIntake": {
@@ -358,6 +368,6 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-28T00:05:47.906Z",
+  "updatedAt": "2026-11-28T00:05:53.305Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46085783598"
 }
