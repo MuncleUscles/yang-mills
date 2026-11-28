@@ -1,0 +1,60 @@
+{
+  "schema_version": 3,
+  "problem": "yang-mills",
+  "kind": "lemma",
+  "title": "Classical vacua of lattice Yang–Mills reduce to static spatial links and parallel-transported Polyakov loops",
+  "claim": "Let G be any group with a faithful unitary representation ρ (as in accepted pr-10, covering SU(n), SO(n), Sp(n)). Work on the periodic lattice (ℤ/Lℤ)^d with direction τ. The Lean theorem Contribution.result proves that every configuration U with vanishing Wilson action S_ρ(U) = 0 is gauge equivalent to a configuration V with four properties. (1) V is flat. (2) Its τ-links are trivial off the last slice. (3) Every other link is independent of the τ-coordinate: V(x, μ) = V(b(x), μ) for μ ≠ τ, with b(x) the base-slice point of x. (4) The remaining last-slice links, the Polyakov loops P of pr-12, satisfy the parallel-transport relation P(b) V(b, μ) = V(x, μ) P(b + e_μ) for every last-slice x with base point b. Together with (3) this gives V(b,μ)⁻¹ P(b) V(b,μ) = P(b + e_μ): the Polyakov field is covariantly constant along the static spatial connection. The classical minimizers of the Wilson action on the d-torus are thus described by data on a (d−1)-dimensional slice: a static flat spatial configuration plus a covariantly constant Polyakov field. This is the dimensional-reduction step behind the description of classical vacua, the flat connections modulo gauge, that any weak-coupling expansion on the torus must start from. It combines pr-10's zero-set theorem (S = 0 ⇔ flat for faithful ρ) with pr-12's axial gauge.",
+  "novelty": "This combines two accepted track results, both imported and used: pr-10 (Wilson action zero set) and pr-12 (axial gauge, Polyakov loops). No accepted track contribution describes the classical vacua beyond flatness. The pr-10 review noted that flat configurations are not classified modulo gauge transformations. This bundle proves the reduction step of that classification: after axial gauge fixing, a flat configuration is static and its Polyakov loops are parallel transported. The mathematics is classical (flat connections on a torus ↔ commuting holonomies). In the external Lean library lgt (Douglas), a search of commit b8793ccf found no flat-connection or vacuum classification statements.",
+  "prior_art": [
+    {
+      "reference": "Accepted track contribution pr-10-51d3068eb273-4b9f0e7dcbd1 (Wilson lattice action foundations)",
+      "relationship": "Imported dependency: its theorem result converts S_ρ(U) = 0 into flatness of U (faithful ρ); its plaquette_gaugeAct lemma gives flatness of the gauge-fixed configuration."
+    },
+    {
+      "reference": "Accepted track contribution pr-12-5e1db83b84ba-e1479e1a1833 (axial gauge and Polyakov loops)",
+      "relationship": "Imported dependency: its theorem result provides the axial gauge, whose trivial τ-links and Polyakov-loop residue are the input to parts (2)–(4)."
+    },
+    {
+      "reference": "M. Creutz, Quarks, Gluons and Lattices (Cambridge University Press, 1983), https://doi.org/10.1017/CBO9780511564635",
+      "relationship": "Textbook background on lattice gauge fixing and pure-gauge/flat configurations on a torus."
+    }
+  ],
+  "research_direction": "Lattice regularization route: formal structure of classical vacua (flat configurations) on the torus",
+  "provenance": {
+    "mode": "extension",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1017/CBO9780511564635",
+        "title": "Quarks, Gluons and Lattices",
+        "authors": [
+          "Michael Creutz"
+        ],
+        "relationship": "Background on lattice gauge fixing and the structure of flat lattice gauge fields on a torus; this bundle formalizes the axial-gauge reduction of flat configurations.",
+        "priority_evidence": "Published monograph (Cambridge University Press, 1983); the underlying facts are classical and priority is not claimed."
+      }
+    ],
+    "discovery_basis": "On 2026-11-28 I checked the accepted track records pr-10 and pr-12 and searched the lgt sources (commit b8793ccf) for flat-connection, vacuum and holonomy-classification statements, finding none. The search was not exhaustive; the result is an extension of accepted track work, not a priority claim."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/static-flat-vacua.json",
+    "reproduce": "Run the trusted open-agent check research/submissions/static-flat-vacua.json --lean (pinned Lean 4.36.0 / Mathlib fc4f59e5; dependencies pr-10 and pr-12 fetched by exact bundle hash)."
+  },
+  "dependencies": [
+    {
+      "id": "pr-10-51d3068eb273-4b9f0e7dcbd1",
+      "use": "Theorem result (part 2, faithful case) turns the hypothesis S_ρ(U) = 0 into flatness of U; plaquette_gaugeAct shows the gauge-fixed configuration is flat.",
+      "importance": "Essential: the theorem is about minimizers of pr-10's Wilson action, and flatness is exactly pr-10's zero-set characterization."
+    },
+    {
+      "id": "pr-12-5e1db83b84ba-e1479e1a1833",
+      "use": "Theorem result supplies the axial gauge: trivial τ-links off the last slice and Polyakov loops on it. Its sliceBase, linePath and shift lemmas are reused.",
+      "importance": "Essential: parts (2)–(4) are statements about the axial-gauge representative constructed by pr-12."
+    }
+  ],
+  "attribution": {
+    "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+    "contributions": "The Lean statements and proofs were written by an AI coding agent (Claude, Anthropic) on behalf of the wallet holder, who directed the submission. No third-party code is included."
+  },
+  "limitations": "This is classical. It proves the axial-gauge reduction of flat configurations, not the full classification of flat connections modulo gauge. The static spatial configuration is not further gauge fixed. The converse (static data with covariantly constant P is flat) is not proved. The moduli are not identified with commuting holonomies, Hom(ℤ^d, G)/G. Faithfulness of ρ is assumed (pr-10). No quantum measure, perturbative expansion, continuum limit or mass gap is addressed."
+}
