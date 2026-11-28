@@ -9,7 +9,7 @@ on:
         required: false
         type: string
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '7,22,37,52 * * * *'
 permissions:
   contents: write
   pull-requests: write
@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/pnp.fun
-          ref: 66a41fd38e26fbc916424dc7415321b07eec7c15
+          ref: 938cb89480cc96ba4fd1686d6d3341436ee9bca1
           path: review
           persist-credentials: false
       - name: Install the review worker’s pinned dependencies
