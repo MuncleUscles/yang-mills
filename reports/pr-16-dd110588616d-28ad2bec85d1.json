@@ -66358,7 +66358,7 @@
     }
   },
   "startedAt": "2026-11-28T02:32:25.211Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x86349d111DE1A8911B04a499f8512455601341bf",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -66558,15 +66558,15 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T02:39:46.904Z",
+  "updatedAt": "2026-11-28T02:39:53.160Z",
   "run": "https://github.com/MuncleUscles/yang-mills/actions/runs/46098171894",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795833792,
     "digest": "913c2e248d9308689db986e53dd1f06c378d7720e9beac2e8846a66f6fedf327",
     "evidence": {
       "artifact_hash": "b9a513fffc006c479af99638a56830e4e6b0f60a417e17a7904b3cecc01492dc",
@@ -66635,8 +66635,20 @@
       "worker_commit": "e72ff4a2b51e8cfa809865555116dfc3855e1e2e"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "300",
+      "evidence_refs": [
+        "pr-16-dd110588616d-28ad2bec85d1",
+        "pr-10-51d3068eb273-4b9f0e7dcbd1",
+        "pr-12-5e1db83b84ba-e1479e1a1833"
+      ],
+      "novelty": 1,
+      "reason": "Accept for modest incremental formalization credit, not mathematical discovery. Beyond pr-10's characterization of zero Wilson action and pr-12's axial gauge, this submission proves that flatness forces transverse links to be constant along the gauge-fixed direction and imposes the boundary Polyakov parallel-transport relation. These provide a useful normal-form reduction for classical lattice vacua, rather than merely restating the imported conclusions. The verified proof substantively uses both credited dependencies, which are explicitly and honestly attributed; their existing results do not earn credit again. The new mathematics consists of elementary plaquette identities and propagation along a finite lattice line, so all bands remain modest. The theorem does not classify gauge-equivalence classes by commuting holonomies, prove a converse reconstruction, construct a quantum theory, or establish any continuum limit or mass gap. Its stated limitations appropriately acknowledge these boundaries.",
+      "reusability": 1,
+      "significance": 1
+    }
   },
   "reviewLinkHash": "0xcb62efc58615b324ae8254ef679526c45d9d2722eca1ec932a937084cbc2938f"
 }
