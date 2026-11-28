@@ -1,0 +1,23 @@
+name: Resume interrupted research
+on:
+  workflow_run:
+    workflows: ['Open research adjudication']
+    branches: [main]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/recover-research.yml'
+      - '.github/workflows/research.yml'
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+jobs:
+  resume:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' ||
+       (github.event.workflow_run.head_repository.full_name == github.repository &&
+        (github.event.workflow_run.conclusion == 'failure' || github.event.workflow_run.conclusion == 'timed_out')))
+    uses: ./.github/workflows/research.yml
